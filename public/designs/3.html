@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDx P. Obul Reddy Public School | 21 Nov</title>
+    
+    <!-- Original Typography: Inter (Modern, Clean Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tedRed: '#EB0028',
+                        charcoal: '#0A0A0A',
+                        surface: '#121212',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0A0A0A; color: #FFFFFF; font-family: 'Inter', sans-serif; }
+        
+        /* Layered Typography Effect */
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+
+        .section-line {
+            height: 1px;
+            background: linear-gradient(90deg, #EB0028 0%, transparent 100%);
+            width: 100%;
+        }
+
+        .speaker-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .speaker-card:hover {
+            border-color: #EB0028;
+            background: #121212;
+        }
+
+        /* Glass Floating Nav */
+        .nav-blur {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+        }
+
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-[100] nav-blur border-b border-white/5">
+        <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-tedRed font-black text-2xl tracking-tighter">TEDx</span>
+                <span class="text-[10px] uppercase tracking-[0.4em] font-medium text-white/50 hidden lg:block">P. Obul Reddy Public School</span>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-10 text-[10px] font-extrabold uppercase tracking-[0.2em]">
+                <a href="#about" class="hover:text-tedRed transition">About</a>
+                <a href="#theme" class="hover:text-tedRed transition">Theme</a>
+                <a href="#speakers" class="hover:text-tedRed transition">Speakers</a>
+                <a href="#schedule" class="hover:text-tedRed transition">Schedule</a>
+                <a href="#organizers" class="hover:text-tedRed transition">Team</a>
+                <a href="#contact" class="hover:text-tedRed transition">Contact</a>
+            </div>
+
+            <button class="lg:hidden" onclick="toggleMenu()"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <p class="text-tedRed font-bold tracking-[0.5em] uppercase text-xs mb-6">21 November</p>
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+                    IDEAS <br> <span class="outline-text">THAT MOVE</span> <br> PERSPECTIVES.
+                </h1>
+                <p class="text-white/40 text-lg max-w-md font-light leading-relaxed mb-10">
+                    TEDx P. Obul Reddy Public School presents a day of conversations worth spreading.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#speakers" class="bg-tedRed text-white px-8 py-4 font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                        Meet the Speakers
+                    </a>
+                    <div class="px-8 py-4 border border-white/10 text-white font-bold text-[10px] uppercase tracking-widest">
+                        [EVENT THEME]
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative hidden lg:block" data-aos="fade-left">
+                <div class="text-[20rem] font-black text-white/[0.02] absolute -top-40 -right-20 select-none">TEDx</div>
+                <div class="relative z-10 aspect-square w-full max-w-md ml-auto border border-white/5 p-4 bg-surface">
+                    <div class="w-full h-full bg-tedRed/10 flex items-center justify-center relative overflow-hidden group">
+                        <i data-lucide="play-circle" class="w-16 h-16 text-tedRed opacity-50 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute bottom-6 left-6 text-left">
+                            <p class="text-[10px] uppercase tracking-widest font-bold opacity-40">Opening Video</p>
+                            <p class="text-sm font-bold uppercase tracking-tighter">Watch Promo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN STRIP -->
+    <div class="bg-surface border-y border-white/5 py-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-12 md:gap-24">
+            <div class="text-center">
+                <p id="days" class="text-4xl font-black tracking-tighter">00</p>
+                <p class="text-[9px] uppercase tracking-widest text-white/30 font-bold">Days</p>
+            </div>
+            <div class="text-center">
+                <p id="hours" class="text-4xl font-black tracking-tighter">00</p>
+                <p class="text-[9px] uppercase tracking-widest text-white/30 font-bold">Hours</p>
+            </div>
+            <div class="text-center">
+                <p id="minutes" class="text-4xl font-black tracking-tighter text-tedRed">00</p>
+                <p class="text-[9px] uppercase tracking-widest text-white/30 font-bold">Minutes</p>
+            </div>
+            <div class="text-center">
+                <p id="seconds" class="text-4xl font-black tracking-tighter">00</p>
+                <p class="text-[9px] uppercase tracking-widest text-white/30 font-bold">Seconds</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SPLIT SECTION -->
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-start">
+            <div class="lg:col-span-5 sticky top-32">
+                <h2 class="text-4xl font-black tracking-tighter uppercase mb-6">Ideas Worth<br><span class="text-tedRed">Spreading</span></h2>
+                <div class="section-line mb-8"></div>
+                <p class="text-white/50 leading-relaxed mb-8">
+                    TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. 
+                </p>
+                <p class="text-white/30 text-sm italic">
+                    This independent TEDx event is operated under license from TED.
+                </p>
+            </div>
+            <div class="lg:col-span-7 space-y-24">
+                <div data-aos="fade-up">
+                    <span class="text-xs font-bold text-tedRed tracking-widest uppercase">01 / The Event</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-6 uppercase tracking-tight">A Day Built Around Ideas</h3>
+                    <p class="text-white/50 leading-relaxed">The P. Obul Reddy Public School TEDx event is a student-curated experience designed to spark curiosity. We invite thinkers and creators to share perspectives that challenge the status quo.</p>
+                </div>
+                <div data-aos="fade-up">
+                    <span class="text-xs font-bold text-tedRed tracking-widest uppercase">02 / The Community</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-6 uppercase tracking-tight">Voices of the Future</h3>
+                    <p class="text-white/50 leading-relaxed">From students to seasoned professionals, our stage welcomes anyone with a story that can move people. It is a melting pot of innovation and local school energy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THEME (FULL IMPACT) -->
+    <section id="theme" class="py-32 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-[10vw] font-black tracking-tighter leading-none uppercase select-none opacity-10 mb-[-5vw]">The Theme</h2>
+            <div class="relative z-10" data-aos="zoom-in">
+                <h3 class="text-6xl md:text-9xl font-black tracking-tighter uppercase text-tedRed mb-8">[EVENT THEME]</h3>
+                <p class="max-w-xl mx-auto text-white/50 text-lg font-light leading-relaxed">
+                    One theme. Many perspectives. This central idea will guide every talk, performance, and conversation throughout the day.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKERS (ASIMMETRIC GRID) -->
+    <section id="speakers" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-end justify-between mb-20">
+                <h2 class="text-5xl font-black tracking-tighter uppercase">Speakers</h2>
+                <p class="text-white/30 font-bold uppercase tracking-[0.3em] text-[10px]">2024 Lineup</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="speaker-grid">
+                <!-- Placeholders -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE (MINIMAL TIMELINE) -->
+    <section id="schedule" class="py-32 bg-surface">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-black tracking-tighter text-center uppercase mb-20">The Timeline</h2>
+            
+            <div class="space-y-0">
+                <div class="group flex items-center py-10 border-b border-white/5" data-aos="fade-up">
+                    <span class="w-24 text-white/30 font-bold text-xs">09:00 AM</span>
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold uppercase tracking-tight group-hover:text-tedRed transition">Doors Open</h4>
+                        <p class="text-white/40 text-sm mt-1">Arrival and Networking</p>
+                    </div>
+                    <i data-lucide="arrow-right" class="text-white/10 group-hover:text-tedRed transition"></i>
+                </div>
+                <div class="group flex items-center py-10 border-b border-white/5" data-aos="fade-up">
+                    <span class="w-24 text-white/30 font-bold text-xs">10:15 AM</span>
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold uppercase tracking-tight group-hover:text-tedRed transition">Session I</h4>
+                        <p class="text-white/40 text-sm mt-1">Opening Talks & Performances</p>
+                    </div>
+                    <i data-lucide="mic" class="text-white/10 group-hover:text-tedRed transition"></i>
+                </div>
+                <div class="group flex items-center py-10 border-b border-white/5" data-aos="fade-up">
+                    <span class="w-24 text-white/30 font-bold text-xs">12:30 PM</span>
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold uppercase tracking-tight group-hover:text-tedRed transition">The Break</h4>
+                        <p class="text-white/40 text-sm mt-1">Curated Lunch & Conversations</p>
+                    </div>
+                    <i data-lucide="coffee" class="text-white/10 group-hover:text-tedRed transition"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-5xl font-black tracking-tighter uppercase mb-8">Let's <span class="text-tedRed">Connect</span></h2>
+                <p class="text-white/40 mb-12 max-w-md leading-relaxed">For inquiries regarding partnerships, speaker nominations, or attendance, reach out to our organizing team.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="w-12 h-12 bg-surface border border-white/10 flex items-center justify-center group-hover:border-tedRed transition">
+                            <i data-lucide="mail" class="w-4 text-tedRed"></i>
+                        </div>
+                        <span class="text-sm font-bold uppercase tracking-widest">[EMAIL PLACEHOLDER]</span>
+                    </div>
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="w-12 h-12 bg-surface border border-white/10 flex items-center justify-center group-hover:border-tedRed transition">
+                            <i data-lucide="instagram" class="w-4 text-tedRed"></i>
+                        </div>
+                        <span class="text-sm font-bold uppercase tracking-widest">[INSTAGRAM HANDLE]</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="space-y-4">
+                <input type="text" placeholder="NAME" class="w-full bg-surface border border-white/10 p-5 font-bold text-xs tracking-widest outline-none focus:border-tedRed transition">
+                <input type="email" placeholder="EMAIL" class="w-full bg-surface border border-white/10 p-5 font-bold text-xs tracking-widest outline-none focus:border-tedRed transition">
+                <textarea placeholder="MESSAGE" rows="5" class="w-full bg-surface border border-white/10 p-5 font-bold text-xs tracking-widest outline-none focus:border-tedRed transition"></textarea>
+                <button class="w-full bg-tedRed py-5 font-black text-xs uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-colors">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-surface py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="text-tedRed font-black text-3xl tracking-tighter">TEDx</span>
+                </div>
+                <p class="text-[10px] uppercase font-bold tracking-widest text-white/30 max-w-xs leading-loose">
+                    This independent TEDx event is operated under license from TED. P. Obul Reddy Public School © <span id="year"></span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-12 text-[10px] font-bold uppercase tracking-widest">
+                <div class="flex flex-col gap-4">
+                    <a href="#about" class="text-white/40 hover:text-white">About</a>
+                    <a href="#theme" class="text-white/40 hover:text-white">Theme</a>
+                    <a href="#speakers" class="text-white/40 hover:text-white">Speakers</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="text-white/40 hover:text-white">Instagram</a>
+                    <a href="#" class="text-white/40 hover:text-white">Twitter</a>
+                    <a href="#" class="text-white/40 hover:text-white">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // DATA CONFIG
+        const EVENT_DATE = new Date("Nov 21, 2024 09:00:00").getTime();
+        const SPEAKERS = [
+            { id: 1, name: "Name Coming Soon", role: "Designation Placeholder" },
+            { id: 2, name: "Name Coming Soon", role: "Designation Placeholder" },
+            { id: 3, name: "Name Coming Soon", role: "Designation Placeholder" },
+            { id: 4, name: "Name Coming Soon", role: "Designation Placeholder" },
+            { id: 5, name: "Name Coming Soon", role: "Designation Placeholder" },
+            { id: 6, name: "Name Coming Soon", role: "Designation Placeholder" },
+        ];
+
+        // INIT
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            AOS.init({ duration: 800, once: true });
+            document.getElementById('year').innerText = new Date().getFullYear();
+            renderSpeakers();
+            startCountdown();
+        });
+
+        function renderSpeakers() {
+            const grid = document.getElementById('speaker-grid');
+            grid.innerHTML = SPEAKERS.map(s => `
+                <div class="speaker-card p-8 group relative overflow-hidden" data-aos="fade-up">
+                    <div class="aspect-[4/5] bg-neutral-900 mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="https://api.dicebear.com/7.x/initials/svg?seed=${s.id}&backgroundColor=0A0A0A" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="text-2xl font-black uppercase tracking-tighter mb-2 group-hover:text-tedRed transition-colors">${s.name}</h4>
+                        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">${s.role}</p>
+                    </div>
+                    <div class="absolute top-8 right-8 text-white/10 group-hover:text-tedRed transition-colors">
+                        <i data-lucide="plus"></i>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function startCountdown() {
+            setInterval(() => {
+                const now = new Date().getTime();
+                const d = EVENT_DATE - now;
+                if (d < 0) return;
+                document.getElementById('days').innerText = Math.floor(d / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById('hours').innerText = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = Math.floor((d % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        function toggleMenu() {
+            // Minimal Mobile Menu Logic
+        }
+    </script>
+</body>
+</html>

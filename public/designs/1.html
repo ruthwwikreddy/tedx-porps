@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDx P. Obul Reddy Public School | 21 November</title>
+    <meta name="description" content="TEDx P. Obul Reddy Public School — an inspiring event bringing together ideas, stories and perspectives worth spreading. 21 November.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- UI Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tedRed: '#EB0028',
+                        darkCharcoal: '#111111',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .ted-outline-text {
+            -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+            color: transparent;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .speaker-card:hover .speaker-img {
+            transform: scale(1.05);
+        }
+        .custom-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #EB0028; }
+    </style>
+</head>
+<body class="bg-white text-darkCharcoal antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-tedRed font-extrabold text-2xl">TEDx</span>
+                <span class="font-medium text-sm tracking-tight hidden md:block">P. Obul Reddy Public School</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#about" class="hover:text-tedRed transition">About</a>
+                <a href="#theme" class="hover:text-tedRed transition">Theme</a>
+                <a href="#speakers" class="hover:text-tedRed transition">Speakers</a>
+                <a href="#schedule" class="hover:text-tedRed transition">Schedule</a>
+                <a href="#organizers" class="hover:text-tedRed transition">Team</a>
+                <a href="#contact" class="hover:text-tedRed transition">Contact</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="lg:hidden" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white absolute w-full border-b border-gray-100 p-6 space-y-4 shadow-xl">
+            <a href="#about" class="block font-bold uppercase tracking-widest text-sm">About</a>
+            <a href="#theme" class="block font-bold uppercase tracking-widest text-sm">Theme</a>
+            <a href="#speakers" class="block font-bold uppercase tracking-widest text-sm">Speakers</a>
+            <a href="#schedule" class="block font-bold uppercase tracking-widest text-sm">Schedule</a>
+            <a href="#contact" class="block font-bold uppercase tracking-widest text-sm">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0 opacity-5 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-tedRed rounded-full filter blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-400 rounded-full filter blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-tedRed font-extrabold text-3xl md:text-5xl mb-2">TEDx</h2>
+                <h1 class="text-3xl md:text-5xl font-light tracking-tighter mb-8 uppercase">P. Obul Reddy Public School</h1>
+                
+                <div class="inline-block border-y border-gray-200 py-6 px-12 mb-10">
+                    <p class="text-sm tracking-[0.3em] uppercase mb-4 text-gray-500">21 November</p>
+                    <h3 class="text-5xl md:text-8xl font-extrabold tracking-tighter">[EVENT THEME]</h3>
+                </div>
+
+                <p class="max-w-xl mx-auto text-lg text-gray-600 mb-12 italic">
+                    "A day of ideas, conversations and perspectives worth spreading."
+                </p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <a href="#theme" class="bg-tedRed text-white px-10 py-4 font-bold text-sm uppercase tracking-widest hover:bg-black transition-colors duration-300">
+                        Explore the Event
+                    </a>
+                    <a href="#speakers" class="border border-darkCharcoal text-darkCharcoal px-10 py-4 font-bold text-sm uppercase tracking-widest hover:bg-darkCharcoal hover:text-white transition-colors duration-300">
+                        Meet the Speakers
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Geometric Decorations -->
+        <div class="absolute bottom-10 left-10 hidden lg:block" data-aos="fade-right">
+            <div class="w-24 h-24 border-2 border-tedRed rotate-45 opacity-20"></div>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="bg-darkCharcoal py-20 text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h4 class="text-xs font-bold tracking-[0.5em] uppercase mb-12 opacity-50">Counting Down to 21 November</h4>
+            <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <span id="days" class="text-5xl md:text-7xl font-extrabold block">00</span>
+                    <span class="text-xs uppercase tracking-widest opacity-50">Days</span>
+                </div>
+                <div>
+                    <span id="hours" class="text-5xl md:text-7xl font-extrabold block">00</span>
+                    <span class="text-xs uppercase tracking-widest opacity-50">Hours</span>
+                </div>
+                <div>
+                    <span id="minutes" class="text-5xl md:text-7xl font-extrabold block">00</span>
+                    <span class="text-xs uppercase tracking-widest opacity-50">Minutes</span>
+                </div>
+                <div>
+                    <span id="seconds" class="text-5xl md:text-7xl font-extrabold block text-tedRed">00</span>
+                    <span class="text-xs uppercase tracking-widest opacity-50">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT TEDx -->
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-5xl font-extrabold tracking-tighter mb-8 leading-none">Ideas Worth <br><span class="text-tedRed">Spreading.</span></h2>
+                    <div class="space-y-6 text-gray-600 leading-relaxed text-lg">
+                        <p>TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection.</p>
+                        <p>These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized.</p>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="aspect-square bg-gray-100 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-tedRed opacity-10 group-hover:opacity-0 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80" alt="TEDx Stage" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-tedRed -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THEME SECTION -->
+    <section id="theme" class="bg-gray-50 py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-tedRed font-bold tracking-[0.3em] uppercase mb-6">The Theme</p>
+            <h2 class="text-7xl md:text-[10rem] font-extrabold tracking-tighter leading-none mb-12 uppercase" data-aos="zoom-in">
+                [EVENT <span class="ted-outline-text">THEME</span>]
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-2xl font-light mb-8 italic text-gray-500">One theme. Many perspectives.</p>
+                <p class="text-gray-600 leading-loose">
+                    This section will be updated with the official conceptualization of the theme. It will explore the narrative arc of the day and why these specific ideas were chosen for the P. Obul Reddy Public School stage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKERS SECTION -->
+    <section id="speakers" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div>
+                    <h2 class="text-5xl font-extrabold tracking-tighter mb-4 uppercase">The Speakers</h2>
+                    <p class="text-gray-500 uppercase tracking-widest text-sm font-bold">Voices. Stories. Perspectives.</p>
+                </div>
+                <div class="h-px flex-grow bg-gray-100 mx-10 hidden md:block mb-4"></div>
+            </div>
+
+            <!-- Speaker Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" id="speakers-grid">
+                <!-- Placeholder Cards (Generated by JS) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="py-32 bg-darkCharcoal text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-5xl font-extrabold tracking-tighter mb-4 text-center">THE DAY</h2>
+            <p class="text-center text-gray-500 uppercase tracking-widest text-sm mb-20">A journey through ideas and conversations.</p>
+            
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row gap-8 items-start border-l-2 border-tedRed pl-8 relative" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-tedRed rounded-full"></div>
+                    <span class="text-tedRed font-bold whitespace-nowrap">09:00 AM</span>
+                    <div>
+                        <h4 class="text-xl font-bold uppercase tracking-tight">Doors Open</h4>
+                        <p class="text-gray-400 mt-2 italic">Registration and morning networking.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start border-l-2 border-gray-700 pl-8 relative" data-aos="fade-up">
+                    <span class="text-gray-500 font-bold whitespace-nowrap">10:00 AM</span>
+                    <div>
+                        <h4 class="text-xl font-bold uppercase tracking-tight">Opening Ceremony</h4>
+                        <p class="text-gray-400 mt-2">Welcome notes and event introduction.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start border-l-2 border-tedRed pl-8 relative" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-tedRed rounded-full"></div>
+                    <span class="text-tedRed font-bold whitespace-nowrap">10:15 AM</span>
+                    <div>
+                        <h4 class="text-xl font-bold uppercase tracking-tight">Session I: The Spark</h4>
+                        <p class="text-gray-400 mt-2">First set of speakers taking the red circle.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start border-l-2 border-gray-700 pl-8 relative" data-aos="fade-up">
+                    <span class="text-gray-500 font-bold whitespace-nowrap">12:30 PM</span>
+                    <div>
+                        <h4 class="text-xl font-bold uppercase tracking-tight">The Conversation Break</h4>
+                        <p class="text-gray-400 mt-2">Lunch and interactive experience zones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZERS -->
+    <section id="organizers" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold tracking-tighter mb-16 uppercase text-center">The Team Behind the Event</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center group" data-aos="fade-up">
+                    <div class="aspect-square bg-gray-50 rounded-full mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=1" alt="Team" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest">Name Coming Soon</h5>
+                    <p class="text-tedRed text-[10px] uppercase font-bold mt-1">Organizer</p>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-square bg-gray-50 rounded-full mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=2" alt="Team" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest">Name Coming Soon</h5>
+                    <p class="text-tedRed text-[10px] uppercase font-bold mt-1">Curator</p>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-square bg-gray-50 rounded-full mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=3" alt="Team" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest">Name Coming Soon</h5>
+                    <p class="text-tedRed text-[10px] uppercase font-bold mt-1">Design Lead</p>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-square bg-gray-50 rounded-full mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=4" alt="Team" class="w-full h-full object-cover">
+                    </div>
+                    <h5 class="font-bold uppercase text-xs tracking-widest">Name Coming Soon</h5>
+                    <p class="text-tedRed text-[10px] uppercase font-bold mt-1">Production</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-32 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-5xl font-extrabold tracking-tighter mb-8 uppercase">Let's Connect</h2>
+                    <p class="text-gray-600 mb-12">Have questions about the event or want to get involved? Send us a message.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white flex items-center justify-center shadow-sm">
+                                <i data-lucide="mail" class="text-tedRed w-5"></i>
+                            </div>
+                            <span class="font-bold text-sm">[OFFICIAL EMAIL]</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white flex items-center justify-center shadow-sm">
+                                <i data-lucide="instagram" class="text-tedRed w-5"></i>
+                            </div>
+                            <span class="font-bold text-sm">[INSTAGRAM HANDLE]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Full Name" class="w-full p-4 bg-white border border-gray-200 outline-none focus:border-tedRed transition">
+                        <input type="email" placeholder="Email Address" class="w-full p-4 bg-white border border-gray-200 outline-none focus:border-tedRed transition">
+                    </div>
+                    <textarea placeholder="Your Message" rows="5" class="w-full p-4 bg-white border border-gray-200 outline-none focus:border-tedRed transition"></textarea>
+                    <button class="bg-darkCharcoal text-white w-full py-4 font-bold uppercase tracking-widest hover:bg-tedRed transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkCharcoal text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
+                    <span class="text-tedRed font-extrabold text-3xl">TEDx</span>
+                    <span class="font-medium text-sm tracking-tight">P. Obul Reddy Public School</span>
+                </div>
+                <p class="text-xs text-gray-500 max-w-sm uppercase tracking-widest leading-loose">
+                    This independent TEDx event is operated under license from TED.
+                </p>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-tedRed"><i data-lucide="instagram"></i></a>
+                <a href="#" class="hover:text-tedRed"><i data-lucide="twitter"></i></a>
+                <a href="#" class="hover:text-tedRed"><i data-lucide="youtube"></i></a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-[10px] uppercase tracking-[0.2em] text-gray-600">
+            &copy; <span id="current-year"></span> TEDx P. Obul Reddy Public School. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- SPEAKER MODAL (HIDDEN BY DEFAULT) -->
+    <div id="speaker-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6 bg-black/90 backdrop-blur-sm">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeSpeaker()" class="absolute top-6 right-6 p-2 hover:text-tedRed">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="grid md:grid-cols-2 gap-0" id="modal-content">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // 1. DATA CONFIGURATION (Edit this to change content)
+        const EVENT_YEAR = 2026; // Setting year as requested
+        const EVENT_DATE = new Date(`November 21, ${EVENT_YEAR} 09:00:00`).getTime();
+        
+        const SPEAKERS = [
+            { id: 1, name: "Name Coming Soon", role: "Designation Placeholder", desc: "Short description of the speaker's background and area of expertise." },
+            { id: 2, name: "Name Coming Soon", role: "Designation Placeholder", desc: "Short description of the speaker's background and area of expertise." },
+            { id: 3, name: "Name Coming Soon", role: "Designation Placeholder", desc: "Short description of the speaker's background and area of expertise." },
+            { id: 4, name: "Name Coming Soon", role: "Designation Placeholder", desc: "Short description of the speaker's background and area of expertise." },
+            { id: 5, name: "Name Coming Soon", role: "Designation Placeholder", desc: "Short description of the speaker's background and area of expertise." },
+            { id: 6, name: "Name Coming Soon", role: "Designation Placeholder", desc: "Short description of the speaker's background and area of expertise." },
+        ];
+
+        // 2. INITIALIZATION
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            AOS.init({ once: true });
+            document.getElementById('current-year').innerText = new Date().getFullYear();
+            renderSpeakers();
+            startCountdown();
+        });
+
+        // 3. NAVIGATION LOGIC
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 4. COUNTDOWN LOGIC
+        function startCountdown() {
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = EVENT_DATE - now;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = "<h3 class='text-2xl font-bold uppercase'>Thank you for being part of TEDx!</h3>";
+                    return;
+                }
+
+                document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // 5. SPEAKER GRID RENDERER
+        function renderSpeakers() {
+            const grid = document.getElementById('speakers-grid');
+            grid.innerHTML = SPEAKERS.map(s => `
+                <div class="speaker-card group cursor-pointer" data-aos="fade-up" onclick="openSpeaker(${s.id})">
+                    <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden relative">
+                        <img src="https://api.dicebear.com/7.x/initials/svg?seed=${s.id}" class="speaker-img w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute inset-0 bg-tedRed mix-blend-multiply opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4">
+                             <div class="bg-tedRed text-white p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                             </div>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-extrabold uppercase tracking-tight group-hover:text-tedRed transition-colors">${s.name}</h4>
+                    <p class="text-gray-500 text-xs uppercase font-bold tracking-widest mt-1">${s.role}</p>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // 6. MODAL LOGIC
+        function openSpeaker(id) {
+            const s = SPEAKERS.find(x => x.id === id);
+            const modal = document.getElementById('speaker-modal');
+            const content = document.getElementById('modal-content');
+            
+            content.innerHTML = `
+                <div class="bg-gray-100 aspect-square md:aspect-auto">
+                    <img src="https://api.dicebear.com/7.x/initials/svg?seed=${s.id}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-12 flex flex-col justify-center">
+                    <span class="text-tedRed font-bold uppercase tracking-widest text-xs mb-4">Speaker Spotlight</span>
+                    <h3 class="text-4xl font-extrabold uppercase mb-2">${s.name}</h3>
+                    <p class="text-lg font-medium text-gray-500 mb-8">${s.role}</p>
+                    <div class="h-px w-12 bg-tedRed mb-8"></div>
+                    <p class="text-gray-600 leading-loose mb-8">${s.desc}</p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-tedRed cursor-pointer"><i data-lucide="linkedin" class="w-4"></i></div>
+                        <div class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-tedRed cursor-pointer"><i data-lucide="globe" class="w-4"></i></div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeSpeaker() {
+            document.getElementById('speaker-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
