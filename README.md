@@ -1,37 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TEDx P. Obul Reddy Public School (TEDxPORPS) 🔴
 
-## Getting Started
+The official event website for **TEDx P. Obul Reddy Public School**, a platform for transformative breakthroughs, bold voices, and emergent ideas. This project serves as the digital face of the event, providing attendees and the community with all necessary information regarding the event, speakers, and schedule.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This is a high-performance, responsive landing page built with the latest web technologies to showcase the spirit of TEDx. It features a modern, sleek design that focuses on typography and imagery to create an immersive experience.
+
+**Event Date:** November 21, 2026  
+**Venue:** P. Obul Reddy Public School Auditorium, Hyderabad, India
+
+## ✨ Key Features
+
+- **Dynamic Hero Section:** Featuring a countdown timer to build anticipation for the event.
+- **Speaker Showcase:** An interactive grid of speakers with detailed modals for biographies and their "Why it Matters" statement.
+- **Event Schedule:** A categorized timeline of the day's events, from registration to the closing ceremony.
+- **About Sections:** Detailed information about the TEDx initiative and the specific vision for the PORPS event.
+- **Venue & Contact:** Integrated location details and contact channels for inquiries.
+- **Partners & Organizers:** Recognition of the people and organizations making the event possible.
+- **Updates & FAQ:** A dedicated space for latest announcements and common queries to reduce support overhead.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens.
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Runtime:** [React 19](https://react.dev/)
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/                # Next.js App Router pages and layouts
+│   ├── layout.tsx     # Root layout (Navbar, Footer, Theme)
+│   ├── page.tsx       # Main landing page (assembles all sections)
+│   └── globals.css     # Global styles and Tailwind directives
+├── components/        # Modular UI components for each section
+│   ├── Hero.tsx       # Main banner and countdown
+│   ├── Speakers.tsx   # Speaker grid and SpeakerModal
+│   ├── Schedule.tsx   # Timeline of events
+│   ├── ...            # Other section components (FAQ, Venue, etc.)
+└── data/              # Centralized data store for easy content management
+    ├── event.ts       # Core event configuration (Name, Date, Venue)
+    ├── speakers.ts    # Speaker list and detailed profiles
+    ├── schedule.ts    # Timeline data
+    └── content.ts     # General content and copy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd tedx
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Configuration & Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# tedx-porps
+To update event details, you don't need to touch the UI components. Simply modify the files in `src/data/`:
+
+- **Change Event Date/Theme:** Edit `src/data/event.ts`.
+- **Add/Edit Speakers:** Update the array in `src/data/speakers.ts`.
+- **Update Timeline:** Modify `src/data/schedule.ts`.
+
+## ⚖️ Disclaimer
+
+This independent TEDx event is operated under license from TED.

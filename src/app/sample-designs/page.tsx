@@ -15,7 +15,6 @@ const sampleDesigns = [
     path: "/designs/1.html",
     themePath: "/themes/1.html",
     title: "Design Concept 01 — Kinetic Horizon",
-    description: "A high-impact visual exploration focusing on dynamic typography, bold structural lines, and geometric motion.",
     badge: "Sample Design 1",
     accent: "from-red-950/40 via-neutral-900 to-neutral-900"
   },
@@ -25,7 +24,6 @@ const sampleDesigns = [
     path: "/designs/2.html",
     themePath: "/themes/2.html",
     title: "Design Concept 02 — Neural Synergy",
-    description: "An editorial aesthetic highlighting interconnected human narratives, cognitive nodes, and deep curiosity.",
     badge: "Sample Design 2",
     accent: "from-neutral-900 via-neutral-900 to-neutral-900"
   },
@@ -35,7 +33,6 @@ const sampleDesigns = [
     path: "/designs/3.html",
     themePath: "/themes/3.html",
     title: "Design Concept 03 — Unbound Catalysts",
-    description: "A minimal, magazine-style layout emphasizing generous whitespace, subtle red accents, and student innovation.",
     badge: "Sample Design 3",
     accent: "from-neutral-900 via-neutral-900 to-red-950/30"
   }
@@ -68,9 +65,6 @@ export default function SampleDesignsPage() {
           <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
             Sample Designs
           </h1>
-          <p className="text-base sm:text-lg text-neutral-400 mt-4 leading-relaxed">
-            All exploratory standalone HTML designs and prototypes are available in the public directories (<code className="text-xs font-mono bg-neutral-900 px-2 py-1 rounded border border-neutral-800 text-[#eb0028]">/public/designs</code> & <code className="text-xs font-mono bg-neutral-900 px-2 py-1 rounded border border-neutral-800 text-[#eb0028]">/public/themes</code>). You can launch live previews directly in your browser.
-          </p>
         </div>
 
         {/* Designs Cards Grid */}
@@ -78,47 +72,60 @@ export default function SampleDesignsPage() {
           {sampleDesigns.map((design) => (
             <div
               key={design.id}
-              className={`rounded-3xl bg-gradient-to-b ${design.accent} border border-neutral-800 hover:border-[#eb0028]/50 transition-all duration-300 p-8 flex flex-col justify-between shadow-2xl group`}
+              className={`rounded-3xl bg-gradient-to-b ${design.accent} border border-neutral-800 hover:border-[#eb0028]/50 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-2xl group`}
             >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#eb0028] font-bold bg-neutral-950/80 px-3 py-1 rounded-full border border-white/5">
-                    {design.badge}
-                  </span>
-                  <span className="text-xs font-mono text-neutral-500">
-                    {design.filename}
-                  </span>
-                </div>
-
-                <h2 className="text-2xl font-bold uppercase tracking-tight text-white mb-3 group-hover:text-neutral-100 transition-colors">
-                  {design.title}
-                </h2>
-
-                <p className="text-sm text-neutral-400 leading-relaxed mb-6">
-                  {design.description}
-                </p>
+              {/* Visual Preview Area */}
+              <div className="aspect-video w-full bg-black/40 border-b border-neutral-800 relative overflow-hidden group-hover:bg-black/20 transition-colors">
+                 <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[#eb0028]/10 border border-[#eb0028]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                       <span className="text-[#eb0028] font-mono text-xs">HTML</span>
+                    </div>
+                 </div>
+                 {/* Simple mock window controls */}
+                 <div className="absolute top-3 left-3 flex gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-neutral-700" />
+                    <div className="w-2 h-2 rounded-full bg-neutral-700" />
+                    <div className="w-2 h-2 rounded-full bg-neutral-700" />
+                 </div>
               </div>
 
-              <div className="space-y-3 pt-6 border-t border-neutral-800/80">
-                <a
-                  href={design.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 px-4 rounded-xl bg-[#eb0028] hover:bg-[#b8001f] text-white font-bold text-xs font-mono tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-950/40 text-center"
-                >
-                  <span>Launch Live Preview</span>
-                  <span>&rarr;</span>
-                </a>
+              <div className="p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#eb0028] font-bold bg-neutral-950/80 px-3 py-1 rounded-full border border-white/5">
+                      {design.badge}
+                    </span>
+                    <span className="text-xs font-mono text-neutral-500">
+                      {design.filename}
+                    </span>
+                  </div>
 
-                <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500 px-1">
-                  <span>File: /public/designs/{design.filename}</span>
+                  <h2 className="text-xl font-bold uppercase tracking-tight text-white mb-6 group-hover:text-neutral-100 transition-colors">
+                    {design.title}
+                  </h2>
+                </div>
+
+                <div className="space-y-3 pt-6 border-t border-neutral-800/80">
                   <a
                     href={design.path}
-                    download={design.filename}
-                    className="hover:text-neutral-300 transition-colors underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-4 rounded-xl bg-[#eb0028] hover:bg-[#b8001f] text-white font-bold text-xs font-mono tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-950/40 text-center"
                   >
-                    Download
+                    <span>Launch Live Preview</span>
+                    <span>&rarr;</span>
                   </a>
+
+                  <div className="flex items-center justify-between text-[11px] font-mono text-neutral-500 px-1">
+                    <span className="truncate mr-2">File: /public/designs/{design.filename}</span>
+                    <a
+                      href={design.path}
+                      download={design.filename}
+                      className="hover:text-neutral-300 transition-colors underline shrink-0"
+                    >
+                      Download
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
