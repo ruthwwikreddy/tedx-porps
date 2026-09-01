@@ -29,10 +29,6 @@ export const Hero: React.FC = () => {
           <span className="text-white font-bold tracking-wider">OFFICIAL TEDx EVENT</span>
           <span className="mx-1 text-neutral-500">•</span>
           <span className="text-neutral-300">{EVENT_CONFIG.schoolName}</span>
-          <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-pulse" />
-          <span className="text-white font-bold tracking-wider">OFFICIAL TEDx EVENT</span>
-          <span className="text-neutral-500">•</span>
-          <span className="text-neutral-300">{EVENT_CONFIG.schoolName}</span>
         </div>
 
         {/* Cinematic Main Title */}
