@@ -30,7 +30,7 @@ export interface OrganizerMember {
   id: string;
   name: string;
   role: string;
-  category: 'Leadership' | 'Curation' | 'Production' | 'Design & Media' | 'Logistics' | 'Student Core';
+  category: 'Leadership' | 'Curation' | 'Production' | 'Design & Media' | 'Logistics' | 'Student Core' | 'Finance' | 'Management' | 'Design' | 'Technical' | 'Media' | 'Marketing';
   image?: string;
 }
 

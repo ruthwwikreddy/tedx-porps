@@ -6,73 +6,67 @@ import { EVENT_CONFIG } from '@/data/event';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#0a0a0c] via-[#0d0d10] to-[#0a0a0c]">
-      {/* Abstract TEDx background glow & geometry */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-
-        {/* Ambient Red Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#eb0028]/15 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 -right-20 w-80 h-80 bg-[#eb0028]/10 rounded-full blur-[100px]" />
-
-        {/* Watermark "TEDx" */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black tracking-tighter text-white/[0.015] select-none pointer-events-none leading-none">
-          TEDx
-        </div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-[#0a0a0c]">
+      {/* Luxury Minimal Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Deep Center Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-[#eb0028]/[0.03] rounded-full blur-[120px]" />
+        {/* Ultra-fine Grid */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Cinematic Main Title */}
-        <div className="mb-8">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-white uppercase leading-[0.95]">
-            <span className="text-[#eb0028]">TEDx</span>{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-100 to-neutral-400">
-              PORPS YOUTH
-            </span>
-            <span className="block text-2xl sm:text-4xl md:text-5xl font-light text-neutral-300 mt-2 tracking-normal">
-              P. Obul Reddy Public School
-            </span>
-          </h1>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center z-10">
+        {/* Minimalist Top Indicator */}
+        <div className="mb-12 animate-fade-in">
+          <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-neutral-500 flex items-center gap-3">
+            <span className="w-8 h-[1px] bg-neutral-800" />
+            {EVENT_CONFIG.dateText}
+            <span className="w-8 h-[1px] bg-neutral-800" />
+          </span>
         </div>
 
-        {/* Glassmorphic Central Theme & Date Matrix */}
-        <div className="my-4 p-6 sm:p-8 rounded-3xl bg-neutral-900/40 border border-white/10 backdrop-blur-2xl max-w-2xl w-full relative shadow-[0_20px_50px_rgba(0,0,0,0.6)] group hover:border-[#eb0028]/40 transition-all duration-300">
-          {/* Top Label */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4 text-[11px] font-mono uppercase tracking-widest">
-            <span className="text-[#eb0028] font-bold flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#eb0028]" />
-              {EVENT_CONFIG.dateText}
+        {/* High-Impact Typography */}
+        <div className="mb-16">
+          <h1 className="text-6xl sm:text-8xl md:text-9xl font-black tracking-tighter text-white uppercase leading-[0.85] transition-all duration-700">
+            <span className="text-[#eb0028] drop-shadow-sm">TEDx</span>{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
+              PORPS YOUTH
             </span>
-            <span className="text-neutral-400">Hyderabad, India</span>
-          </div>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-neutral-500 mt-8 tracking-[0.2em] uppercase opacity-60">
+            P. Obul Reddy Public School
+          </p>
+        </div>
 
-          {/* Theme Title */}
-          <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 mb-1">
+        {/* Floating Theme Section (No Box) */}
+        <div className="mb-20 max-w-3xl">
+          <div className="text-xs font-mono uppercase tracking-widest text-[#eb0028] mb-4 opacity-80">
             {EVENT_CONFIG.themeSubtitle}
           </div>
-          <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight uppercase">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight uppercase leading-tight mb-6">
             {EVENT_CONFIG.theme}
-          </div>
-
-          <p className="text-xs sm:text-sm text-neutral-300 mt-3 max-w-md mx-auto leading-relaxed">
+          </h2>
+          <div className="h-px w-16 bg-[#eb0028] mx-auto mb-6" />
+          <p className="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto leading-relaxed font-light">
             {EVENT_CONFIG.tagline}
           </p>
         </div>
 
-        {/* Clean CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+        {/* Ultra-Sleek CTAs */}
+        <div className="flex flex-col sm:flex-row items-center gap-8">
           <Link
             href="#about"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#eb0028] hover:bg-[#b8001f] text-white font-bold text-xs font-mono tracking-widest uppercase transition-all shadow-xl shadow-red-950/50 hover:scale-[1.02] active:scale-[0.98] text-center"
+            className="group relative w-full sm:w-auto px-12 py-4 rounded-full bg-[#eb0028] text-white font-bold text-xs font-mono tracking-widest uppercase transition-all hover:scale-105 active:scale-95 text-center overflow-hidden shadow-2xl shadow-red-900/40"
           >
-            Explore the Event &rarr;
+            <span className="relative z-10">Enter the Experience</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </Link>
+          
           <Link
             href="#speakers"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-200 hover:text-white border border-white/15 font-semibold text-xs font-mono tracking-widest uppercase transition-all backdrop-blur-xl text-center"
+            className="w-full sm:w-auto px-12 py-4 rounded-full bg-transparent text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-600 font-semibold text-xs font-mono tracking-widest uppercase transition-all text-center hover:scale-105 active:scale-95"
           >
-            Meet the Speakers
+            The Speakers
           </Link>
         </div>
       </div>
