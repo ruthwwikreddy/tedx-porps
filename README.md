@@ -1,15 +1,15 @@
-# TEDx P. Obul Reddy Public School (TEDxPORPS) 🔴
+# TEDx P. Obul Reddy Public School (TEDxPORPS) 
 
 The official event website for **TEDx P. Obul Reddy Public School**, a platform for transformative breakthroughs, bold voices, and emergent ideas. This project serves as the digital face of the event, providing attendees and the community with all necessary information regarding the event, speakers, and schedule.
 
-## 🚀 Overview
+##  Overview  
 
 This is a high-performance, responsive landing page built with the latest web technologies to showcase the spirit of TEDx. It features a modern, sleek design that focuses on typography and imagery to create an immersive experience.
 
 **Event Date:** November 21, 2026  
 **Venue:** P. Obul Reddy Public School Auditorium, Hyderabad, India
 
-## ✨ Key Features
+##  Key Features
 
 - **Dynamic Hero Section:** Featuring a countdown timer to build anticipation for the event.
 - **Speaker Showcase:** An interactive grid of speakers with detailed modals for biographies and their "Why it Matters" statement.
@@ -20,7 +20,7 @@ This is a high-performance, responsive landing page built with the latest web te
 - **Updates & FAQ:** A dedicated space for latest announcements and common queries to reduce support overhead.
 - **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
@@ -28,7 +28,7 @@ This is a high-performance, responsive landing page built with the latest web te
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Runtime:** [React 19](https://react.dev/)
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 src/
@@ -75,7 +75,7 @@ src/
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📝 Configuration & Customization
+## Configuration & Customization
 
 To update event details, you don't need to touch the UI components. Simply modify the files in `src/data/`:
 
@@ -83,6 +83,6 @@ To update event details, you don't need to touch the UI components. Simply modif
 - **Add/Edit Speakers:** Update the array in `src/data/speakers.ts`.
 - **Update Timeline:** Modify `src/data/schedule.ts`.
 
-## ⚖️ Disclaimer
+## Disclaimer
 
 This independent TEDx event is operated under license from TED.

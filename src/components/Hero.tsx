@@ -6,10 +6,7 @@ import { EVENT_CONFIG } from '@/data/event';
 
 export const Hero: React.FC = () => {
   return (
-    <section
-      id="home"
-      className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#0a0a0c] via-[#0d0d10] to-[#0a0a0c]"
-    >
+    <section id="home" className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#0a0a0c] via-[#0d0d10] to-[#0a0a0c]">
       {/* Abstract TEDx background glow & geometry */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle grid pattern */}
@@ -27,7 +24,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Top Tagline Pill with Glassmorphism */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-neutral-300 mb-8 backdrop-blur-xl shadow-lg">
+        <div className="inline-flex flex-wrap items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-white/[0.04] border border-white/10 text-sm sm:text-xs font-mono tracking-wider text-neutral-300 mb-8 backdrop-blur-xl shadow-lg" aria-label="Official TEDx event badge">
           <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-pulse" />
           <span className="text-white font-bold tracking-wider">OFFICIAL TEDx EVENT</span>
           <span className="text-neutral-500">•</span>
