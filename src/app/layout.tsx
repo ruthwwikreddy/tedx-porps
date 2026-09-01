@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   keywords: [
     "TEDx",
     "TEDxPORPS",
-    "P. Obul Reddy Public School",
+    "PORPS YOUTH",
     "TEDx Hyderabad",
     "Ideas Worth Spreading",
     "Youth Conference",
     "Student Innovation",
     "21 November"
   ],
-  authors: [{ name: "TEDx P. Obul Reddy Public School Organizing Committee" }],
-  creator: "TEDx P. Obul Reddy Public School",
+  authors: [{ name: "TEDx PORPS YOUTH Organizing Committee" }],
+  creator: "TEDx PORPS YOUTH",
   openGraph: {
     type: "website",
     locale: "en_US",

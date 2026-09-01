@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
             <Link
               href="#home"
               className="flex items-center group focus:outline-none"
-              aria-label="TEDx P. Obul Reddy Public School Home"
+              aria-label="TEDx PORPS YOUTH Home"
             >
               <div className="flex items-baseline leading-none">
                 {/* TED in bold red with direct lowercase x */}
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
 
                 {/* Subscript PORPS */}
                 <span className="ml-2 text-xs sm:text-sm font-bold tracking-wider text-white/90 group-hover:text-white transition-colors uppercase translate-y-1">
-                  PORPS
+                  PORPS YOUTH
                 </span>
               </div>
             </Link>
@@ -143,7 +143,7 @@ export const Navbar: React.FC = () => {
                 x
               </span>
               <span className="ml-2.5 text-xs font-bold text-neutral-300">
-                PORPS
+                PORPS YOUTH
               </span>
             </div>
 

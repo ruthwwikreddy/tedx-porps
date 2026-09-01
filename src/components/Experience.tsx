@@ -72,7 +72,7 @@ export const Experience: React.FC = () => {
           number="06"
           badge="Immersive Journey"
           title="More Than A Stage"
-          subtitle="Beyond the talks, TEDx P. Obul Reddy Public School creates an atmosphere designed to evoke wonder and action."
+          subtitle="Beyond the talks, TEDx PORPS YOUTH creates an atmosphere designed to evoke wonder and action."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

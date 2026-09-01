@@ -23,23 +23,15 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Top Tagline Pill with Glassmorphism */}
-        <div className="hidden sm:inline-flex flex-wrap items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-white/[0.04] border border-white/10 text-sm sm:text-xs font-mono tracking-wider text-neutral-300 mb-8 backdrop-blur-xl shadow-lg" aria-label="Official TEDx event badge">
-          <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-pulse" aria-hidden="true" />
-          <span className="text-white font-bold tracking-wider">OFFICIAL TEDx EVENT</span>
-          <span className="mx-1 text-neutral-500">•</span>
-          <span className="text-neutral-300">{EVENT_CONFIG.schoolName}</span>
-        </div>
-
         {/* Cinematic Main Title */}
         <div className="mb-8">
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-white uppercase leading-[0.95]">
             <span className="text-[#eb0028]">TEDx</span>{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-100 to-neutral-400">
-              P. Obul Reddy
+              PORPS YOUTH
             </span>
             <span className="block text-2xl sm:text-4xl md:text-5xl font-light text-neutral-300 mt-2 tracking-normal">
-              Public School
+              P. Obul Reddy Public School
             </span>
           </h1>
         </div>

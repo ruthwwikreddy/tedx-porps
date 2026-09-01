@@ -10,7 +10,7 @@ export const Venue: React.FC = () => {
           number="07"
           badge="Location & Setting"
           title="The Venue"
-          subtitle="Hosted at the world-class auditorium of P. Obul Reddy Public School, Hyderabad."
+          subtitle="Hosted at the world-class auditorium of PORPS YOUTH, Hyderabad."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">

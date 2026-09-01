@@ -86,7 +86,7 @@ export const Countdown: React.FC = () => {
             Counting Down to {EVENT_CONFIG.dateText}
           </h2>
           <p className="text-xs sm:text-sm text-neutral-400 font-mono mt-2">
-            Target Year: {EVENT_CONFIG.year} • P. Obul Reddy Public School
+            Target Year: {EVENT_CONFIG.year} • PORPS YOUTH
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export const Countdown: React.FC = () => {
                 THE EVENT HAS BEGUN
               </h3>
               <p className="text-neutral-400 text-sm mt-2">
-                Thank you for being part of TEDx P. Obul Reddy Public School. Follow our live social channels for updates and stage highlights.
+                Thank you for being part of TEDx PORPS YOUTH. Follow our live social channels for updates and stage highlights.
               </p>
             </div>
           ) : (

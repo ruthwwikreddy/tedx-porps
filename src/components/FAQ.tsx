@@ -18,7 +18,7 @@ export const FAQ: React.FC = () => {
           number="10"
           badge="Inquiries & Clarity"
           title="Frequently Asked Questions"
-          subtitle="Everything you need to know regarding TEDx P. Obul Reddy Public School, speaker curation, and event guidelines."
+          subtitle="Everything you need to know regarding TEDx PORPS YOUTH, speaker curation, and event guidelines."
         />
 
         <div className="space-y-4">

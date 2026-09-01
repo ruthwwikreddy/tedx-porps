@@ -161,7 +161,7 @@ export default function SampleDesignsPage() {
 
       {/* Footer */}
       <div className="max-w-6xl mx-auto w-full pt-16 mt-16 border-t border-neutral-900 text-center text-xs font-mono text-neutral-500">
-        TEDx P. Obul Reddy Public School • {EVENT_CONFIG.dateText} • Sample Designs Archive
+        TEDx PORPS YOUTH • {EVENT_CONFIG.dateText} • Sample Designs Archive
       </div>
     </main>
   );

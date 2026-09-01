@@ -26,7 +26,7 @@ export const Contact: React.FC = () => {
           number="13"
           badge="Direct Inquiries"
           title="Let's Connect"
-          subtitle="Reach out to the TEDx P. Obul Reddy Public School curatorial and operations committee."
+          subtitle="Reach out to the TEDx PORPS YOUTH curatorial and operations committee."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

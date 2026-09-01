@@ -17,7 +17,7 @@ export const Organizers: React.FC = () => {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <h3 className="text-xl font-bold uppercase tracking-tight text-white">
-              TEDx Organizing Team
+              TEDx Executive Team
             </h3>
             <div className="h-[1px] flex-1 bg-neutral-800" />
           </div>
@@ -39,37 +39,6 @@ export const Organizers: React.FC = () => {
                 </p>
                 <span className="inline-block mt-3 text-[10px] font-mono text-neutral-500 bg-neutral-800/50 px-2 py-0.5 rounded">
                   {member.category}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Category II: Student Core Committee */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <h3 className="text-xl font-bold uppercase tracking-tight text-white">
-              Student Core Committee
-            </h3>
-            <div className="h-[1px] flex-1 bg-neutral-800" />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {ORGANIZERS_DATA.studentCore.map((member) => (
-              <div
-                key={member.id}
-                className="p-5 rounded-xl bg-neutral-900/40 border border-neutral-800/80 hover:border-neutral-700 transition-all flex items-center justify-between"
-              >
-                <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-tight">
-                    {member.name}
-                  </h4>
-                  <p className="text-xs font-mono text-neutral-400 mt-0.5">
-                    {member.role}
-                  </p>
-                </div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-600">
-                  Student Team
                 </span>
               </div>
             ))}

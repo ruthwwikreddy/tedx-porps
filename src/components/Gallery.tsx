@@ -141,7 +141,7 @@ export const Gallery: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-between text-xs font-mono text-neutral-400 pt-2 border-t border-neutral-800">
-              <span>TEDx P. Obul Reddy Public School</span>
+              <span>TEDx PORPS YOUTH</span>
               <span className="text-[#eb0028] uppercase">21 November Archive</span>
             </div>
           </div>

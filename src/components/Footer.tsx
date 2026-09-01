@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
                 TED<span className="text-sm uppercase font-black -top-1 relative">x</span>
               </span>
               <span className="ml-2 text-sm font-semibold tracking-tight text-white">
-                P. Obul Reddy Public School
+                PORPS YOUTH
               </span>
             </div>
 

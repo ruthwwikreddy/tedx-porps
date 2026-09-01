@@ -32,7 +32,7 @@ export default function Home() {
       {/* About TED & TEDx */}
       <AboutTedx />
 
-      {/* About The P. Obul Reddy Public School Event */}
+      {/* About The PORPS YOUTH Event */}
       <AboutEvent />
 
       {/* Theme Section */}

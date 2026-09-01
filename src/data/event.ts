@@ -72,8 +72,8 @@ export interface UpdateItem {
 }
 
 export const EVENT_CONFIG = {
-  name: "TEDx P. Obul Reddy Public School",
-  schoolName: "P. Obul Reddy Public School",
+  name: "TEDx PORPS YOUTH",
+  schoolName: "PORPS YOUTH",
   shortName: "TEDxPORPS",
   dateText: "21 NOVEMBER",
   eventDateISO: "2026-11-21T09:00:00+05:30",
@@ -83,7 +83,7 @@ export const EVENT_CONFIG = {
   themeDescription: "A collective exploration of transformative breakthroughs, bold voices, and the emergent ideas shaping tomorrow. The official theme statement will be unveiled as the countdown continues.",
   tagline: "A day of ideas, conversations and perspectives worth spreading.",
   venue: {
-    name: "P. Obul Reddy Public School Auditorium",
+    name: "PORPS YOUTH Auditorium",
     address: "Road No. 25, Jubilee Hills, Hyderabad, Telangana 500033",
     mapEmbedUrl: "",
     city: "Hyderabad, India"

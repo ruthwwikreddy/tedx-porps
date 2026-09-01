@@ -2,25 +2,20 @@ import { OrganizerMember, PartnerTier, FAQItem, GalleryItem, UpdateItem } from '
 
 export const ORGANIZERS_DATA: {
   leadership: OrganizerMember[];
-  studentCore: OrganizerMember[];
 } = {
   leadership: [
-    { id: "org-1", name: "Name Coming Soon", role: "Licensee & Lead Organizer", category: "Leadership" },
-    { id: "org-2", name: "Name Coming Soon", role: "Head of Curation", category: "Curation" },
-    { id: "org-3", name: "Name Coming Soon", role: "Event Director", category: "Leadership" },
-    { id: "org-4", name: "Name Coming Soon", role: "Head of Production & Stage", category: "Production" },
-    { id: "org-5", name: "Name Coming Soon", role: "Head of Design & Visual Identity", category: "Design & Media" },
-    { id: "org-6", name: "Name Coming Soon", role: "Head of Marketing & Communications", category: "Design & Media" },
-    { id: "org-7", name: "Name Coming Soon", role: "Head of Logistics & Operations", category: "Logistics" },
-    { id: "org-8", name: "Name Coming Soon", role: "Faculty Advisor & Mentor", category: "Leadership" },
-  ],
-  studentCore: [
-    { id: "stu-1", name: "Name Coming Soon", role: "Student Co-Curator", category: "Student Core" },
-    { id: "stu-2", name: "Name Coming Soon", role: "Speaker Liaison Lead", category: "Student Core" },
-    { id: "stu-3", name: "Name Coming Soon", role: "Technical & AV Lead", category: "Student Core" },
-    { id: "stu-4", name: "Name Coming Soon", role: "Editorial & Content Lead", category: "Student Core" },
-    { id: "stu-5", name: "Name Coming Soon", role: "Stage Management Lead", category: "Student Core" },
-    { id: "stu-6", name: "Name Coming Soon", role: "Attendee Experience Lead", category: "Student Core" },
+    { id: "org-1", name: "C. Shruthi Reddy", role: "Faculty Incharge & Co-organiser", category: "Leadership" },
+    { id: "org-2", name: "Ananya Yelamanchalli", role: "Organiser", category: "Leadership" },
+    { id: "org-3", name: "VNS Abhirami Vutla", role: "Organising", category: "Leadership" },
+    { id: "org-4", name: "Name Coming Soon", role: "Finance and Sponsorship", category: "Finance" },
+    { id: "org-5", name: "Name Coming Soon", role: "Production", category: "Production" },
+    { id: "org-6", name: "Name Coming Soon", role: "Volunteer Coordination", category: "Management" },
+    { id: "org-7", name: "Name Coming Soon", role: "Design and Documentation", category: "Design" },
+    { id: "org-8", name: "Name Coming Soon", role: "Logistics and Hospitality", category: "Logistics" },
+    { id: "org-9", name: "Name Coming Soon", role: "Technical Coordination", category: "Technical" },
+    { id: "org-10", name: "Name Coming Soon", role: "Photography and Videography", category: "Media" },
+    { id: "org-11", name: "Name Coming Soon", role: "Marketing and PR", category: "Marketing" },
+    { id: "org-12", name: "Name Coming Soon", role: "Internal Speaker Training", category: "Curation" },
   ]
 };
 
@@ -69,13 +64,13 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-3",
     question: "Where is the event being held?",
-    answer: "The event will be hosted at the main auditorium of P. Obul Reddy Public School, Road No. 25, Jubilee Hills, Hyderabad. Dedicated signages and volunteer hosts will assist you upon arrival.",
+    answer: "The event will be hosted at the main auditorium of PORPS YOUTH, Road No. 25, Jubilee Hills, Hyderabad. Dedicated signages and volunteer hosts will assist you upon arrival.",
     category: "Event Day"
   },
   {
     id: "faq-4",
     question: "Who can attend?",
-    answer: "TEDx P. Obul Reddy Public School is open to students, educators, innovators, thinkers, and curious minds. Official attendance guidelines and attendee details will be announced soon.",
+    answer: "TEDx PORPS YOUTH is open to students, educators, innovators, thinkers, and curious minds. Official attendance guidelines and attendee details will be announced soon.",
     category: "Access"
   },
   {
