@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Top Tagline Pill with Glassmorphism */}
-        <div className="inline-flex flex-wrap items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-white/[0.04] border border-white/10 text-sm sm:text-xs font-mono tracking-wider text-neutral-300 mb-8 backdrop-blur-xl shadow-lg" aria-label="Official TEDx event badge">
+        <div className="hidden sm:inline-flex flex-wrap items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-white/[0.04] border border-white/10 text-sm sm:text-xs font-mono tracking-wider text-neutral-300 mb-8 backdrop-blur-xl shadow-lg" aria-label="Official TEDx event badge">
           <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-pulse" aria-hidden="true" />
           <span className="text-white font-bold tracking-wider">OFFICIAL TEDx EVENT</span>
           <span className="mx-1 text-neutral-500">•</span>
