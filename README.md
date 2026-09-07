@@ -1,88 +1,92 @@
-# TEDx P. Obul Reddy Public School (TEDxPORPS) 
+<div align="center">
+# TEDxPORPS
+**A high-performance, modern digital presence for the TEDxPORPS event.**
+A curated event experience featuring speaker showcases, interactive schedules, and an immersive interface designed to amplify "Ideas Worth Spreading."
+[Source](https://github.com/ruthwwikreddy/tedx-porps) · Built by [Ruthwik Reddy](https://www.ruthwikreddy.live/)
+MIT licensed · Next.js 14 · Tailwind CSS · Responsive Design
+</div>
 
-The official event website for **TEDx P. Obul Reddy Public School**, a platform for transformative breakthroughs, bold voices, and emergent ideas. This project serves as the digital face of the event, providing attendees and the community with all necessary information regarding the event, speakers, and schedule.
+---
 
-##  Overview  
+## Table of contents
+1. [What TEDxPORPS does](#1-what-tedxporps-does)
+2. [Core Features](#2-core-features)
+3. [Architecture](#3-architecture)
+4. [Quick start](#4-quick-start)
+5. [Project Structure](#5-project-structure)
+6. [Tech Stack](#6-tech-stack)
+7. [Contributing](#7-contributing)
+8. [License](#8-license)
 
-This is a high-performance, responsive landing page built with the latest web technologies to showcase the spirit of TEDx. It features a modern, sleek design that focuses on typography and imagery to create an immersive experience.
+---
 
-**Event Date:** November 21, 2026  
-**Venue:** P. Obul Reddy Public School Auditorium, Hyderabad, India
+## 1. What TEDxPORPS does
 
-##  Key Features
+| Capability | Detail |
+|---|---|
+| **Speaker Showcase** | Dynamic speaker cards and detailed modals to highlight diverse perspectives and narratives. |
+| **Interactive Schedule** | A structured timeline of talks, breaks, and networking sessions for an optimized attendee experience. |
+| **Immersive UI** | Modern components including Countdown timers, Galleries, and a polished Hero section. |
+| **Responsive Core** | Fully optimized for mobile, tablet, and desktop to ensure accessibility across all devices. |
+| **Event Management** | Centrally managed data for speakers, partners, and event details for easy updates. |
 
-- **Dynamic Hero Section:** Featuring a countdown timer to build anticipation for the event.
-- **Speaker Showcase:** An interactive grid of speakers with detailed modals for biographies and their "Why it Matters" statement.
-- **Event Schedule:** A categorized timeline of the day's events, from registration to the closing ceremony.
-- **About Sections:** Detailed information about the TEDx initiative and the specific vision for the PORPS event.
-- **Venue & Contact:** Integrated location details and contact channels for inquiries.
-- **Partners & Organizers:** Recognition of the people and organizations making the event possible.
-- **Updates & FAQ:** A dedicated space for latest announcements and common queries to reduce support overhead.
-- **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens.
+## 2. Core Features
 
-## Tech Stack
+- **Countdown Timer**: Generates anticipation with a real-time clock ticking down to the event start.
+- **Speaker Registry**: A modular system to manage and display speaker bios and expertise.
+- **Venue Integration**: Detailed location and accessibility information for event attendees.
+- **Partner Ecosystem**: Dedicated section to acknowledge and showcase collaborating organizations.
+- **FAQ System**: A streamlined accordian-style interface to resolve common attendee queries.
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Runtime:** [React 19](https://react.dev/)
+## 3. Architecture
 
-## Project Structure
-
-```text
-src/
-├── app/                # Next.js App Router pages and layouts
-│   ├── layout.tsx     # Root layout (Navbar, Footer, Theme)
-│   ├── page.tsx       # Main landing page (assembles all sections)
-│   └── globals.css     # Global styles and Tailwind directives
-├── components/        # Modular UI components for each section
-│   ├── Hero.tsx       # Main banner and countdown
-│   ├── Speakers.tsx   # Speaker grid and SpeakerModal
-│   ├── Schedule.tsx   # Timeline of events
-│   ├── ...            # Other section components (FAQ, Venue, etc.)
-└── data/              # Centralized data store for easy content management
-    ├── event.ts       # Core event configuration (Name, Date, Venue)
-    ├── speakers.ts    # Speaker list and detailed profiles
-    ├── schedule.ts    # Timeline data
-    └── content.ts     # General content and copy
+```
+User Browser    ──▶    Next.js App (Frontend)    ──▶    Static Data (src/data)
+─────────────────         ────────────────────────            ────────────────────────
+Request Page     ─────▶  Page Component Layout    ──────▶    Speakers/Schedule Data
+Scroll/Interact  ─────▶  Dynamic Components       ──────▶    Content Config
+View Speakers    ─────▶  SpeakerModal Rendering   ──────▶    Speaker Details
 ```
 
-## ⚙️ Getting Started
+The application follows a **Data-Driven Component Architecture**. Content is decoupled from the UI, allowing the event organizers to update speakers or schedules in `src/data` without modifying the component logic.
 
-### Prerequisites
+## 4. Quick start
 
-- Node.js 18+
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd tedx
+   git clone https://github.com/ruthwwikreddy/tedx-porps.git
+   cd tedx-porps
    ```
 
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. Run the development server:
+3. **Run the development server**:
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **Access the site**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Configuration & Customization
+## 5. Project Structure
 
-To update event details, you don't need to touch the UI components. Simply modify the files in `src/data/`:
+- `src/app`: Next.js App Router pages and layouts.
+- `src/components`: Modular UI components (Hero, Speakers, Schedule, etc.).
+- `src/data`: The "Source of Truth" containing event configuration, speaker lists, and timings.
+- `public/designs`: Archive of design iterations and prototypes.
 
-- **Change Event Date/Theme:** Edit `src/data/event.ts`.
-- **Add/Edit Speakers:** Update the array in `src/data/speakers.ts`.
-- **Update Timeline:** Modify `src/data/schedule.ts`.
+## 6. Tech Stack
 
-## Disclaimer
+- **Framework**: Next.js (App Router).
+- **Language**: TypeScript.
+- **Styling**: Tailwind CSS.
+- **Deployment**: Vercel.
 
-This independent TEDx event is operated under license from TED.
+## 7. Contributing
+Contributions to the UI/UX or performance optimizations are welcome. Please ensure you follow the existing component patterns in `src/components`.
+
+## 8. License
+Released under the **MIT License** — free to use as a template for other TEDx or community events.
