@@ -1,5 +1,7 @@
 <div align="center">
+   
 # TEDxPORPS
+
 **A high-performance, modern digital presence for the TEDxPORPS event.**
 A curated event experience featuring speaker showcases, interactive schedules, and an immersive interface designed to amplify "Ideas Worth Spreading."
 [Source](https://github.com/ruthwwikreddy/tedx-porps) · Built by [Ruthwik Reddy](https://www.ruthwikreddy.live/)
