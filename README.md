@@ -1,5 +1,5 @@
 <div align="center">
-   
+
 # TEDxPORPS
 
 **A high-performance, modern digital presence for the TEDxPORPS event.**
@@ -50,45 +50,80 @@ Scroll/Interact  ─────▶  Dynamic Components       ──────
 View Speakers    ─────▶  SpeakerModal Rendering   ──────▶    Speaker Details
 ```
 
-The application follows a **Data-Driven Component Architecture**. Content is decoupled from the UI, allowing the event organizers to update speakers or schedules in `src/data` without modifying the component logic.
+The application follows a **Data-Driven Component Architecture**. Content is decoupled from the UI, allowing the event organizers to update speakers and partners without requiring code changes.
 
 ## 4. Quick start
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/ruthwwikreddy/tedx-porps.git
-   cd tedx-porps
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Access the site**:
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+```bash
+git clone https://github.com/ruthwwikreddy/tedx-porps.git
+cd tedx-porps
+npm install
+npm run dev
+```
 
 ## 5. Project Structure
 
-- `src/app`: Next.js App Router pages and layouts.
-- `src/components`: Modular UI components (Hero, Speakers, Schedule, etc.).
-- `src/data`: The "Source of Truth" containing event configuration, speaker lists, and timings.
-- `public/designs`: Archive of design iterations and prototypes.
+```
+tedx-porps/
+├── public/
+│   ├── favicon.ico
+│   ├── file.svg
+│   ├── vercel.svg
+│   ├── next.svg
+│   ├── globe.svg
+│   ├── window.svg
+│   └── designs/
+│       ├── 1.html
+│       ├── 2.html
+│       └── 3.html
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── AboutEvent.tsx
+│   │   ├── AboutTedx.tsx
+│   │   ├── Countdown.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Gallery.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── Organizers.tsx
+│   │   ├── Partners.tsx
+│   │   ├── Schedule.tsx
+│   │   ├── SectionHeading.tsx
+│   │   ├── Speakers.tsx
+│   │   ├── SpeakerCard.tsx
+│   │   ├── SpeakerModal.tsx
+│   │   ├── Theme.tsx
+│   │   ├── Updates.tsx
+│   │   └── Venue.tsx
+│   ├── data/
+│   │   ├── event.ts
+│   │   ├── speakers.ts
+│   │   └── schedule.ts
+│   └── globals.css
+├── postcss.config.mjs
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── eslint.config.mjs
+```
 
 ## 6. Tech Stack
 
-- **Framework**: Next.js (App Router).
-- **Language**: TypeScript.
-- **Styling**: Tailwind CSS.
-- **Deployment**: Vercel.
+- **Frontend**: Next.js 14
+- **UI Framework**: Tailwind CSS
+- **State Management**: Built-in Next.js state management
+- **Database**: Static data stored in `src/data`
 
 ## 7. Contributing
-Contributions to the UI/UX or performance optimizations are welcome. Please ensure you follow the existing component patterns in `src/components`.
+
+Contributions are welcome and appreciated. Please follow the standard GitHub workflow for submitting pull requests.
 
 ## 8. License
-Released under the **MIT License** — free to use as a template for other TEDx or community events.
+
+Released under the **MIT License**.
+
+Designed and engineered by **[Ruthwik Reddy](https://www.ruthwikreddy.live/)** · [github.com/ruthwwikreddy/tedx-porps](https://github.com/ruthwwikreddy/tedx-porps)
