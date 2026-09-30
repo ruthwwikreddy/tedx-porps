@@ -91,6 +91,16 @@ export const Navbar: React.FC = () => {
 
             {/* Right: CONTACT Curved-Rectangle Button + Mobile Hamburger Menu */}
             <div className="flex items-center gap-3">
+              {/* Pitch Deck Button (Desktop) */}
+              <a
+                href="/pitchdesk.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden xl:inline-flex px-3.5 py-2 text-xs font-mono uppercase tracking-widest text-red-400 hover:text-white bg-red-950/40 hover:bg-red-900/50 border border-red-500/30 rounded-xl transition-all font-semibold"
+              >
+                Pitch Deck
+              </a>
+
               {/* Secondary Designs Button (Desktop) */}
               <Link
                 href="/sample-designs"
@@ -183,14 +193,26 @@ export const Navbar: React.FC = () => {
 
           {/* Footer inside menu */}
           <div className="pt-6 border-t border-white/10 max-w-4xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link
-              href="/sample-designs"
-              onClick={() => setMenuOpen(false)}
-              className="py-3 px-6 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-ping" />
-              <span>Sample Designs Archive (3 HTMLs)</span>
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="/pitchdesk.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="py-3 px-5 rounded-xl bg-red-950/50 border border-red-500/40 hover:bg-red-900/50 text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-ping" />
+                <span>Pitch Deck (20 Slides) &rarr;</span>
+              </a>
+
+              <Link
+                href="/sample-designs"
+                onClick={() => setMenuOpen(false)}
+                className="py-3 px-5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2"
+              >
+                <span>Sample Designs</span>
+              </Link>
+            </div>
 
             <div className="text-xs font-mono text-neutral-500">
               {EVENT_CONFIG.dateText} • Hyderabad • {EVENT_CONFIG.schoolName}

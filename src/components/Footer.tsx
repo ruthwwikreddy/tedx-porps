@@ -13,6 +13,7 @@ export const Footer: React.FC = () => {
     { label: 'Experience', href: '#experience' },
     { label: 'Organizers', href: '#organizers' },
     { label: 'Partners', href: '#partners' },
+    { label: 'Sponsorship Deck', href: '/pitchdesk.html' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
     { label: 'Sample Designs', href: '/sample-designs' },

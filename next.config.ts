@@ -8,7 +8,27 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: false,
-  }
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/pitchdesk',
+        destination: '/pitchdesk.html',
+      },
+      {
+        source: '/pitchdeck',
+        destination: '/pitchdesk.html',
+      },
+      {
+        source: '/pitch-desk',
+        destination: '/pitchdesk.html',
+      },
+      {
+        source: '/sponsorship-deck',
+        destination: '/pitchdesk.html',
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -57,15 +57,39 @@ export const Partners: React.FC = () => {
               Interested in Partnering With Us?
             </h4>
             <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-              Join visionary organizations championing youth-driven innovation in Hyderabad.
+              Join visionary organizations championing youth-driven innovation in Hyderabad. Explore our complete 2026 Sponsorship Proposal.
             </p>
           </div>
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-xs font-mono uppercase tracking-widest text-white border border-white/15 transition-all text-center whitespace-nowrap"
-          >
-            Inquire For Partnership &rarr;
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="/pitchdesk.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full bg-[#eb0028] hover:bg-[#b8001f] text-xs font-mono uppercase tracking-widest text-white font-bold transition-all text-center whitespace-nowrap shadow-lg shadow-red-950/40 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              View Sponsorship Deck &rarr;
+            </a>
+            <a
+              href="/pitchdesk.pdf"
+              download="TEDxPORPS_Youth_2026_Sponsorship_Proposal.pdf"
+              className="px-4 py-3 rounded-full bg-white/5 hover:bg-white/10 text-xs font-mono uppercase tracking-widest text-neutral-300 hover:text-white border border-white/15 transition-all text-center whitespace-nowrap"
+            >
+              PDF &darr;
+            </a>
+            <a
+              href="/pitchdesk.pptx"
+              download="TEDxPORPS_Youth_2026_Sponsorship_Proposal.pptx"
+              className="px-4 py-3 rounded-full bg-white/5 hover:bg-white/10 text-xs font-mono uppercase tracking-widest text-neutral-300 hover:text-white border border-white/15 transition-all text-center whitespace-nowrap"
+            >
+              PPT &darr;
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-xs font-mono uppercase tracking-widest text-white border border-white/15 transition-all text-center whitespace-nowrap"
+            >
+              Inquire For Partnership &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </section>

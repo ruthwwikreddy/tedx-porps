@@ -142,7 +142,19 @@ export default function SampleDesignsPage() {
           </h3>
           
           <div className="bg-black/60 rounded-xl p-4 font-mono text-xs text-neutral-300 space-y-2 border border-neutral-800">
-            <div className="text-neutral-500"># Available static HTML files in /public/designs:</div>
+            <div className="text-neutral-500"># Available static files in /public:</div>
+            <div className="flex items-center justify-between hover:text-white">
+              <span>├── /public/pitchdesk.html <span className="text-[#eb0028] text-[10px] font-bold uppercase ml-2">[HTML Proposal]</span></span>
+              <a href="/pitchdesk.html" target="_blank" className="text-[#eb0028] hover:underline">/pitchdesk.html &rarr;</a>
+            </div>
+            <div className="flex items-center justify-between hover:text-white">
+              <span>├── /public/pitchdesk.pdf <span className="text-neutral-400 text-[10px] font-bold uppercase ml-2">[PDF Slides]</span></span>
+              <a href="/pitchdesk.pdf" download="TEDxPORPS_Youth_2026_Sponsorship_Proposal.pdf" className="text-neutral-300 hover:text-white hover:underline">Download PDF &darr;</a>
+            </div>
+            <div className="flex items-center justify-between hover:text-white">
+              <span>├── /public/pitchdesk.pptx <span className="text-neutral-400 text-[10px] font-bold uppercase ml-2">[PowerPoint Deck]</span></span>
+              <a href="/pitchdesk.pptx" download="TEDxPORPS_Youth_2026_Sponsorship_Proposal.pptx" className="text-neutral-300 hover:text-white hover:underline">Download PPT &darr;</a>
+            </div>
             <div className="flex items-center justify-between hover:text-white">
               <span>├── /public/designs/1.html</span>
               <a href="/designs/1.html" target="_blank" className="text-[#eb0028] hover:underline">/designs/1.html &rarr;</a>
