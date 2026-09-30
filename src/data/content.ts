@@ -1,49 +1,77 @@
 import { OrganizerMember, PartnerTier, FAQItem, GalleryItem, UpdateItem } from './event';
 
-export const ORGANIZERS_DATA: {
-  leadership: OrganizerMember[];
-} = {
+export const ORGANIZERS_DATA = {
   leadership: [
-    { id: "org-1", name: "Ms. C. Shruti Reddy", role: "Teacher Organiser", category: "Leadership" },
-    { id: "org-2", name: "Yelamanchili Ananya", role: "Co-Organiser", category: "Leadership" },
-    { id: "org-3", name: "Abhirami Vutla", role: "Co-Organiser", category: "Leadership" },
-    { id: "org-4", name: "Name Coming Soon", role: "Finance and Sponsorship", category: "Finance" },
-    { id: "org-5", name: "Name Coming Soon", role: "Production", category: "Production" },
-    { id: "org-6", name: "Name Coming Soon", role: "Volunteer Coordination", category: "Management" },
-    { id: "org-7", name: "Name Coming Soon", role: "Design and Documentation", category: "Design" },
-    { id: "org-8", name: "Name Coming Soon", role: "Logistics and Hospitality", category: "Logistics" },
-    { id: "org-9", name: "Name Coming Soon", role: "Technical Coordination", category: "Technical" },
-    { id: "org-10", name: "Name Coming Soon", role: "Photography and Videography", category: "Media" },
-    { id: "org-11", name: "Name Coming Soon", role: "Marketing and PR", category: "Marketing" },
-    { id: "org-12", name: "Name Coming Soon", role: "Internal Speaker Training", category: "Curation" },
+    { id: "org-1", name: "Ms. C. Shruti Reddy", role: "Teacher Organiser", category: "Leadership" as const },
+    { id: "org-2", name: "Yelamanchili Ananya", role: "Co-Organiser", category: "Leadership" as const },
+    { id: "org-3", name: "Abhirami Vutla", role: "Co-Organiser", category: "Leadership" as const },
+  ],
+  executiveBoard: [
+    {
+      department: "Photography & Videography Head",
+      heads: ["Sista Vanshika", "Srinidhi Nerella"],
+      badge: "Media"
+    },
+    {
+      department: "Technical Coordination Head",
+      heads: ["Vignesh Nethi", "Yedla Samuel Peter", "Keshav Agarwal"],
+      badge: "Tech"
+    },
+    {
+      department: "Logistics & Hospitality Head",
+      heads: ["S. Jyotsna", "A. Sri Parnitha"],
+      badge: "Logistics"
+    },
+    {
+      department: "Volunteer Coordination Head",
+      heads: ["Nischaya", "Saharsh Rao Juvvadi"],
+      badge: "Operations"
+    },
+    {
+      department: "Head of Food & Beverage (F&B)",
+      heads: ["Vishesh Jain", "Ishan Samatrya"],
+      badge: "Hospitality"
+    },
+    {
+      department: "Design & Documentation Head",
+      heads: ["Akkenapally Ruthwik Reddy", "G. Sanvi Sree"],
+      badge: "Creative & Web"
+    },
+    {
+      department: "Internal Speaker Training Head",
+      heads: ["Sindusha", "Nidhi More"],
+      badge: "Curation"
+    },
+    {
+      department: "Finance & Sponsorship Head",
+      heads: ["Anagha Swara", "Kaustaub Sreekar", "Raga Pranavi Emmadi"],
+      badge: "Finance"
+    },
+    {
+      department: "Production Head",
+      heads: ["Yukthi Reddy", "Yash S Parekh"],
+      badge: "Stage & AV"
+    },
+    {
+      department: "Marketing & PR Head",
+      heads: ["Sanvriti M", "G Srinidhi"],
+      badge: "Communications"
+    }
   ]
 };
 
+
 export const PARTNERS_DATA: PartnerTier[] = [
   {
-    tierName: "Title Partner",
-    description: "Anchor supporter powering the realization of ideas worth spreading.",
+    tierName: "Official Sponsorship Package",
+    description: "Structured at ₹50,000+ to empower production excellence, audio-visual recording, and attendee experiences.",
     partners: [
-      { id: "p-title-1", name: "Title Partner", category: "Official Title Sponsor", tagline: "Championing Knowledge & Global Innovation", logoPlaceholder: "PARTNER 01" }
-    ]
-  },
-  {
-    tierName: "Event Partners",
-    description: "Collaborators fueling speaker experiences, production, and audio-visual excellence.",
-    partners: [
-      { id: "p-ev-1", name: "Event Partner Alpha", category: "Production & Media Partner", logoPlaceholder: "PARTNER 02" },
-      { id: "p-ev-2", name: "Event Partner Beta", category: "Technology & Sound Partner", logoPlaceholder: "PARTNER 03" },
-      { id: "p-ev-3", name: "Event Partner Gamma", category: "Sustainability Partner", logoPlaceholder: "PARTNER 04" }
-    ]
-  },
-  {
-    tierName: "Community & Supporting Partners",
-    description: "Organisations committed to student empowerment and creative expression.",
-    partners: [
-      { id: "p-comm-1", name: "Community Partner", category: "Youth Outreach", logoPlaceholder: "PARTNER 05" },
-      { id: "p-comm-2", name: "Supporting Partner", category: "Hospitality & Logistics", logoPlaceholder: "PARTNER 06" },
-      { id: "p-comm-3", name: "Design Collaborator", category: "Brand & Print", logoPlaceholder: "PARTNER 07" },
-      { id: "p-comm-4", name: "Education Affiliate", category: "Academic Research", logoPlaceholder: "PARTNER 08" }
+      { id: "p-sp-1", name: "Social Media Promotion", category: "Digital Touchpoint", tagline: "Prominent featured announcements across official channels", logoPlaceholder: "DIGITAL" },
+      { id: "p-sp-2", name: "Event-Space Branding", category: "Physical Touchpoint", tagline: "Architectural placement within conference hall and stage views", logoPlaceholder: "BRANDING" },
+      { id: "p-sp-3", name: "Dedicated Stall Opportunity", category: "Engagement Hub", tagline: "Interactive physical presence and delegate experience booth", logoPlaceholder: "STALL" },
+      { id: "p-sp-4", name: "Video & Livestream Recognition", category: "Broadcast", tagline: "Pre-roll acknowledgements in official TEDx archival recordings", logoPlaceholder: "BROADCAST" },
+      { id: "p-sp-5", name: "On-Event Verbal Recognition", category: "Main Stage", tagline: "Formal curator address recognition during opening and closing ceremonies", logoPlaceholder: "KEYNOTE" },
+      { id: "p-sp-6", name: "Sponsor Thank-You & Commendation", category: "Honors", tagline: "Official memento, certificate of appreciation, and post-event recap", logoPlaceholder: "COMMENDATION" }
     ]
   }
 ];
@@ -51,51 +79,45 @@ export const PARTNERS_DATA: PartnerTier[] = [
 export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-1",
-    question: "What is TEDx?",
-    answer: "In the spirit of ideas worth spreading, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection in a small group. These local, self-organized events are branded TEDx, where x = independently organized TED event.",
+    question: "What is TEDxPORPS Youth 2026?",
+    answer: "TEDxPORPS Youth is an independently organized, student-led TEDx event operated under official license from TED Conferences LLC (approved on 21 August 2026). Held at P. Obul Reddy Public School, Jubilee Hills, Hyderabad, our platform brings together inspiring voices to challenge conventional wisdom.",
     category: "General"
   },
   {
     id: "faq-2",
-    question: "When is the event taking place?",
-    answer: "The event is scheduled for 21 November. Doors open in the morning with sessions and experiences continuing throughout the day. Please check the Schedule section for the tentative timeline.",
+    question: "When and where is the event happening?",
+    answer: "The event is scheduled for 21 November 2026 at the Main Auditorium of P. Obul Reddy Public School, Road No. 25, Jubilee Hills, Hyderabad. Delegate registration opens at 08:30 AM IST.",
     category: "Event Day"
   },
   {
     id: "faq-3",
-    question: "Where is the event being held?",
-    answer: "The event will be hosted at the main auditorium of PORPS YOUTH, Road No. 25, Jubilee Hills, Hyderabad. Dedicated signages and volunteer hosts will assist you upon arrival.",
-    category: "Event Day"
+    question: "What is this year's official theme?",
+    answer: "The official theme for 2026 is 'THE WEIGHT OF EXPECTATIONS'. We dissect the invisible pressures framing modern youth development across five core dimensions: Family, School, Society, Culture, and Ourselves.",
+    category: "Speakers & Theme"
   },
   {
     id: "faq-4",
-    question: "Who can attend?",
-    answer: "TEDx PORPS YOUTH is open to students, educators, innovators, thinkers, and curious minds. Official attendance guidelines and attendee details will be announced soon.",
-    category: "Access"
+    question: "Who are the speakers on stage?",
+    answer: "Our tentative lineup includes Prof. J. Anuradha Jonnalagadda (Academic & Research), Ms. B. V. Nandini Reddy (Film & Narrative), Ms. Amala Akkineni (Conservation & Arts), and Mr. Pawan Kumar Chandana (Co-Founder & CEO, Skyroot Aerospace). Lineup is tentative and subject to final confirmation.",
+    category: "Speakers & Theme"
   },
   {
     id: "faq-5",
-    question: "Who are the speakers?",
-    answer: "Our curatorial team is currently finalizing an exceptional lineup of thinkers, artists, scientists, and changemakers. Speaker names and talk titles will be announced progressively in the Speakers section.",
-    category: "Speakers & Theme"
+    question: "How can students purchase tickets?",
+    answer: "Official Student Passes are available at ₹1200 exclusively through our online booking portal. The pass includes full event access, welcome delegate kit, priority seating, and an official Certificate of Participation. Payment is completed securely via UPI.",
+    category: "Access"
   },
   {
     id: "faq-6",
-    question: "What is this year's theme?",
-    answer: "The overarching theme is represented by [EVENT THEME]. It serves as a unified lens to explore multi-disciplinary insights, breakthrough questions, and collective hope.",
-    category: "Speakers & Theme"
+    question: "How can organizations partner or sponsor?",
+    answer: "We welcome forward-thinking organizations to support youth innovation. Our sponsorship opportunity starts at ₹50,000 with comprehensive digital, stage, stall, and video benefits. You can view and download the full Sponsorship Proposal (PDF/PPT) on our site or contact our organizing team directly.",
+    category: "General"
   },
   {
     id: "faq-7",
-    question: "What should I expect at the event?",
-    answer: "Expect a fast-paced, multi-sensory day filled with captivating 15-18 minute talks, interactive networking hubs, curated student performances, and intellectual conversations with like-minded individuals.",
-    category: "Event Day"
-  },
-  {
-    id: "faq-8",
-    question: "Will there be a livestream?",
-    answer: "Broadcast details and online streaming access information will be announced closer to the event date. Follow our official channels for real-time announcements.",
-    category: "Access"
+    question: "Who can I contact for direct queries?",
+    answer: "You can reach Co-Organiser Yelamanchili Ananya (yananyaanu@gmail.com, 8977540506), Co-Organiser Abhirami Vutla (Abhiramivutla@gmail.com, +91 99593 02051), or Teacher Organiser Ms. C. Shruti Reddy (+91 91 77071 678).",
+    category: "General"
   }
 ];
 
@@ -117,26 +139,27 @@ export const GALLERY_DATA: GalleryItem[] = [
 export const UPDATES_DATA: UpdateItem[] = [
   {
     id: "up-1",
-    date: "Coming Soon",
+    date: "21 August 2026",
     badge: "Announcement",
-    title: "Official Theme & Visual Identity Reveal",
-    summary: "The creative and curatorial team will officially unveil the concept narrative, typography manifesto, and conceptual artwork for [EVENT THEME].",
+    title: "Official TEDx License Approved by TED",
+    summary: "TEDx Applications has officially confirmed the approval of the TEDxPORPS Youth license for the 2026 edition at P. Obul Reddy Public School.",
     readTime: "2 min read"
   },
   {
     id: "up-2",
-    date: "Coming Soon",
+    date: "September 2026",
     badge: "Speaker Reveal",
-    title: "Phase I Speaker Lineup Announcement",
-    summary: "Introducing our first three speakers spanning the frontiers of neuroscience, computational design, and public grassroots reform.",
+    title: "Official Theme & Tentative Speakers Revealed",
+    summary: "Introducing our 2026 theme 'The Weight of Expectations' alongside tentative keynote voices across science, film, aerospace, and cultural scholarship.",
     readTime: "3 min read"
   },
   {
     id: "up-3",
-    date: "Coming Soon",
-    badge: "Behind The Scenes",
-    title: "Inside the Stage Design & Experience Studio",
-    summary: "Get a sneak peek into the student-led workshop building the interactive physical installations and digital visual backdrops.",
-    readTime: "4 min read"
+    date: "Active Now",
+    badge: "Production",
+    title: "Student Pass Bookings Opened (₹1200)",
+    summary: "Official student delegate pass booking is now live. Secure your confirmed seat, delegate kit, and participation credentials.",
+    readTime: "1 min read"
   }
 ];
+

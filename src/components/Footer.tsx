@@ -112,9 +112,21 @@ export const Footer: React.FC = () => {
             {EVENT_CONFIG.disclaimer}
           </p>
 
-          <p className="font-mono text-[11px] text-neutral-400">
-            &copy; {currentYear} {EVENT_CONFIG.name}. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 font-mono text-[11px] text-neutral-400">
+            <span>&copy; {currentYear} {EVENT_CONFIG.name}. All rights reserved.</span>
+            <span className="hidden sm:inline text-neutral-700">•</span>
+            <span className="text-neutral-300">
+              Made by{' '}
+              <a
+                href="https://ruthwikreddy.live"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-[#eb0028] font-bold underline decoration-neutral-700 hover:decoration-[#eb0028] transition-colors"
+              >
+                Ruthwik Reddy
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </footer>

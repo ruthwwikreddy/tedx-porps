@@ -49,25 +49,30 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, onSelect }) =
         </div>
 
         {/* Speaker Name / Title */}
-        <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight text-white group-hover:text-[#eb0028] transition-colors">
-          {speaker.profession}
+        <h3 className="text-lg font-bold uppercase tracking-tight text-white group-hover:text-[#eb0028] transition-colors leading-snug">
+          {speaker.name}
         </h3>
 
-        <p className="text-xs font-mono text-neutral-400 mt-1">
+        <p className="text-xs font-mono text-[#eb0028] mt-1 font-semibold">
+          {speaker.profession}
+        </p>
+
+        <p className="text-[11px] font-mono text-neutral-400 mt-0.5">
           {speaker.organization}
         </p>
 
         {/* Talk Title Quote */}
-        <p className="text-xs sm:text-sm text-neutral-300 mt-3 leading-relaxed italic">
+        <p className="text-xs text-neutral-300 mt-3 leading-relaxed italic line-clamp-2">
           &ldquo;{speaker.talkTitle}&rdquo;
         </p>
       </div>
 
       {/* Action Prompt */}
       <div className="mt-5 pt-3.5 border-t border-neutral-800 flex items-center justify-between text-xs font-mono text-neutral-400 group-hover:text-white transition-colors">
-        <span>Read Story</span>
+        <span>Speaker Profile</span>
         <span className="text-[#eb0028] group-hover:translate-x-1 transition-transform">&rarr;</span>
       </div>
     </div>
   );
 };
+

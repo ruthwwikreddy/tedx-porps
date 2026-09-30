@@ -3,69 +3,61 @@ import { ScheduleItem } from './event';
 export const SCHEDULE_DATA: ScheduleItem[] = [
   {
     id: "sch-01",
-    time: "09:00 AM",
-    title: "Doors Open & Attendee Check-in",
+    time: "08:30 AM",
+    title: "Phase I — Registration & Welcome",
     category: "Registration",
-    description: "Welcome lounge access, badge collection, interactive installations, and morning refreshment gathering.",
+    description: "Delegate check-in, environment onboarding, attendee kit collection, badge verification, and networking in the reception salon.",
     venue: "Main Foyer & Reception"
   },
   {
     id: "sch-02",
-    time: "10:00 AM",
-    title: "Opening Ceremony & Curatorial Welcome",
+    time: "09:30 AM",
+    title: "Phase II — Opening Session & Curatorial Address",
     category: "Ceremony",
-    description: "Welcome address by student curators, stage unveiling, and introduction to this year's theme and guidelines.",
+    description: "Welcome address by student curators and faculty advisors, stage unveiling, and introduction to the 2026 theme 'The Weight of Expectations'.",
     venue: "Auditorium Main Stage"
   },
   {
     id: "sch-03",
     time: "10:15 AM",
-    title: "Session I — Spark & Inception",
+    title: "Phase III (Part A) — TEDx Talks: Heritage & Narrative",
     category: "Talk",
-    description: "Opening keynote talks probing emergent ideas, technological leaps, and systemic transformations.",
-    speaker: "Speaker 01 & Speaker 02",
+    description: "Core speaker sessions exploring classical scholarship, societal pressures, and unscripted storytelling featuring keynote addresses.",
+    speaker: "Prof. J. Anuradha Jonnalagadda & Ms. B. V. Nandini Reddy",
     venue: "Auditorium Main Stage"
   },
   {
     id: "sch-04",
-    time: "11:30 AM",
-    title: "Session II — Human Nuance & Expression",
+    time: "11:45 AM",
+    title: "Phase III (Part B) — TEDx Talks: Empathy & Frontiers",
     category: "Talk",
-    description: "Powerful explorations in storytelling, vulnerability, youth entrepreneurship, and cultural memory.",
-    speaker: "Speaker 03 & Speaker 04",
+    description: "Core speaker sessions probing radical compassion, ecological stewardship, and private aerospace breakthroughs.",
+    speaker: "Ms. Amala Akkineni & Mr. Pawan Kumar Chandana",
     venue: "Auditorium Main Stage"
   },
   {
     id: "sch-05",
-    time: "12:45 PM",
-    title: "Curated Networking & Idea Lounge",
-    category: "Break",
-    description: "Connect with fellow attendees, explore interactive exhibitions, student art displays, and enjoy lunch.",
+    time: "01:00 PM",
+    title: "Phase IV — Interactive Segment & Delegate Experience",
+    category: "Interactive",
+    description: "Audience engagement workshops, interactive delegate installations, collaborative brainstorming walls, and curated lunch.",
     venue: "Courtyard & Idea Hub"
   },
   {
     id: "sch-06",
-    time: "02:00 PM",
-    title: "Session III — Horizons & The Unbound",
-    category: "Talk",
-    description: "Visionary presentations focusing on global climate interventions, neuroplasticity, and ethical frontiers.",
-    speaker: "Speaker 05 & Speaker 06",
-    venue: "Auditorium Main Stage"
+    time: "02:15 PM",
+    title: "Phase V — Speaker Interaction & Direct Q&A Circles",
+    category: "Interactive",
+    description: "Direct roundtable dialogues, Q&A sessions with thought leaders, and student-curated artistic interludes.",
+    venue: "Auditorium Main Stage & Idea Lounge"
   },
   {
     id: "sch-07",
-    time: "03:30 PM",
-    title: "Student Performance & Musical Feature",
-    category: "Interactive",
-    description: "A specially curated artistic performance celebrating student expression, synthesis, and creative rhythm.",
-    venue: "Auditorium Main Stage"
-  },
-  {
-    id: "sch-08",
-    time: "04:15 PM",
-    title: "Closing Remarks & Vote of Thanks",
+    time: "03:45 PM",
+    title: "Phase VI — Closing Session & Synthesis",
     category: "Closing",
-    description: "Concluding address by the organizing committee, recognition of partners and mentors, and group photograph.",
+    description: "Synthesizing insights, formal vote of thanks to partners and mentors, distribution of delegate certificates, and group photograph.",
     venue: "Auditorium Main Stage"
   }
 ];
+

@@ -30,40 +30,57 @@ export const Contact: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left: Contact Info Placeholders */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-neutral-900/60 border border-neutral-800 shadow-xl space-y-6">
+          {/* Left: Contact Info from Slide 19 */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="p-6 sm:p-8 rounded-3xl bg-neutral-900/60 border border-neutral-800 shadow-xl space-y-5">
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-[#eb0028] font-bold">
-                  Organizing Committee
+                  Direct Enquiries &amp; Organisers
                 </span>
                 <h3 className="text-2xl font-bold uppercase tracking-tight text-white mt-1">
-                  {EVENT_CONFIG.name}
+                  TEDxPORPS Youth 2026
                 </h3>
                 <p className="text-xs font-mono text-neutral-400 mt-1">
-                  {EVENT_CONFIG.venue.name} • {EVENT_CONFIG.dateText}
+                  P. Obul Reddy Public School, Jubilee Hills, Hyderabad
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-neutral-800 space-y-4 text-sm font-mono">
-                <div>
-                  <div className="text-xs text-neutral-500 uppercase">Official Email</div>
-                  <div className="text-white font-medium mt-0.5">{EVENT_CONFIG.contact.email}</div>
+              {/* Co-Organiser 1 */}
+              <div className="p-4 rounded-xl bg-white/3 border border-white/5 space-y-1">
+                <span className="text-[10px] font-mono text-[#eb0028] uppercase tracking-wider font-bold">Co-Organiser</span>
+                <div className="text-sm font-bold text-white">Yelamanchili Ananya</div>
+                <div className="text-xs text-neutral-400 font-mono">
+                  Email: <a href="mailto:yananyaanu@gmail.com" className="text-white hover:text-[#eb0028] transition-colors">yananyaanu@gmail.com</a>
                 </div>
-
-                <div>
-                  <div className="text-xs text-neutral-500 uppercase">Instagram</div>
-                  <div className="text-white font-medium mt-0.5">{EVENT_CONFIG.contact.instagram}</div>
-                </div>
-
-                <div>
-                  <div className="text-xs text-neutral-500 uppercase">Social & Press Inquiries</div>
-                  <div className="text-white font-medium mt-0.5">[SOCIAL LINKS PLACEHOLDER]</div>
+                <div className="text-xs text-neutral-400 font-mono">
+                  Phone: <a href="tel:8977540506" className="text-white hover:text-[#eb0028] transition-colors">8977540506</a>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-red-950/20 border border-red-900/30 text-xs text-neutral-400">
-                <span className="text-[#eb0028] font-bold">Note:</span> This contact form is for general event inquiries, media passes, and partner coordination. No ticketing inquiries are active at this time.
+              {/* Co-Organiser 2 */}
+              <div className="p-4 rounded-xl bg-white/3 border border-white/5 space-y-1">
+                <span className="text-[10px] font-mono text-[#eb0028] uppercase tracking-wider font-bold">Co-Organiser</span>
+                <div className="text-sm font-bold text-white">Abhirami Vutla</div>
+                <div className="text-xs text-neutral-400 font-mono">
+                  Email: <a href="mailto:Abhiramivutla@gmail.com" className="text-white hover:text-[#eb0028] transition-colors">Abhiramivutla@gmail.com</a>
+                </div>
+                <div className="text-xs text-neutral-400 font-mono">
+                  Phone: <a href="tel:+919959302051" className="text-white hover:text-[#eb0028] transition-colors">+91 99593 02051</a>
+                </div>
+              </div>
+
+              {/* Teacher Organiser */}
+              <div className="p-4 rounded-xl bg-white/3 border border-white/5 space-y-1">
+                <span className="text-[10px] font-mono text-[#eb0028] uppercase tracking-wider font-bold">Teacher Organiser</span>
+                <div className="text-sm font-bold text-white">Ms. C. Shruti Reddy</div>
+                <div className="text-xs text-neutral-400">P. Obul Reddy Public School</div>
+                <div className="text-xs text-neutral-400 font-mono">
+                  Phone: <a href="tel:+919177071678" className="text-white hover:text-[#eb0028] transition-colors">+91 91 77071 678</a>
+                </div>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-red-950/20 border border-red-900/30 text-xs text-neutral-400">
+                <span className="text-[#eb0028] font-bold">Partnerships &amp; Media:</span> Contact us directly for brand alignments, stall setups, or official press access.
               </div>
             </div>
           </div>

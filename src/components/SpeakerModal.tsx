@@ -64,10 +64,13 @@ export const SpeakerModal: React.FC<SpeakerModalProps> = ({ speaker, onClose }) 
               <div className="text-xs font-mono uppercase tracking-widest text-[#eb0028] font-bold">
                 SPEAKER 0{speaker.placeholderIndex}
               </div>
-              <div className="text-sm font-semibold text-white mt-1">
+              <div className="text-base font-bold text-white mt-1">
+                {speaker.name}
+              </div>
+              <div className="text-xs text-[#eb0028] font-mono mt-1 font-semibold">
                 {speaker.profession}
               </div>
-              <div className="text-[11px] text-neutral-400 font-mono mt-1">
+              <div className="text-[11px] text-neutral-400 font-mono mt-0.5">
                 {speaker.organization}
               </div>
 

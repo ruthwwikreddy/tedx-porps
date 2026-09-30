@@ -3,30 +3,29 @@ import { Speaker } from './event';
 export const SPEAKERS_DATA: Speaker[] = [
   {
     id: "sp-01",
-    name: "Speaker 01",
-    profession: "Name Coming Soon",
-    organization: "Domain Innovator & Pioneer",
-    talkTitle: "Redefining Boundaries in Modern Science",
-    category: "Science & Technology",
-    bio: "Full speaker biography and background will be revealed soon. Our curatorial committee has selected visionary minds addressing the most pressing paradigms of our era.",
-    whyMatters: "Understanding systemic transformations allows communities to anticipate societal shifts with proactive empathy and scientific precision.",
+    name: "Prof. J. Anuradha Jonnalagadda",
+    profession: "Academic & Research",
+    organization: "Distinguished Academician & Cultural Scholar",
+    talkTitle: "The Burden of Heritage: Traditional Pedagogy vs Modern Minds",
+    category: "Academic & Research",
+    bio: "Celebrated professor and researcher at the University of Hyderabad, Prof. Anuradha explores the intersection of classical scholarship, cultural history, and the evolving expectations placed upon students in modern academia.",
+    whyMatters: "Traditional learning frameworks carry profound wisdom, but when rigid expectations take over, learning becomes anxiety. Unpacking these structures helps youth reclaim the authentic joy of curiosity.",
     image: "/speakers/placeholder-1.jpg",
     placeholderIndex: 1,
     socials: {
-      twitter: "#",
       linkedin: "#",
       website: "#"
     }
   },
   {
     id: "sp-02",
-    name: "Speaker 02",
-    profession: "Name Coming Soon",
-    organization: "Global Policy & Social Change",
-    talkTitle: "The Architecture of Collaborative Futures",
-    category: "Social Impact",
-    bio: "Full speaker biography and background will be revealed soon. Discover how grassroot dynamics and large-scale governance intersect.",
-    whyMatters: "Bridging the divide between high-level policy and everyday lived human experiences is critical for sustainable community resilience.",
+    name: "Ms. B. V. Nandini Reddy",
+    profession: "Film & Narrative",
+    organization: "Acclaimed Filmmaker & Screenwriter",
+    talkTitle: "Unscripted Realities: Telling Stories Outside Societal Molds",
+    category: "Film & Narrative",
+    bio: "Renowned Indian film director and screenwriter acclaimed for heart-warming, character-centric narratives in Telugu cinema. She has consistently challenged formulaic storytelling to champion nuanced, empathetic human relationships.",
+    whyMatters: "Media and cinema subconsciously construct the expectations youth feel pressured to perform. Reframing our narratives allows the next generation to write their own stories free from imposed scripts.",
     image: "/speakers/placeholder-2.jpg",
     placeholderIndex: 2,
     socials: {
@@ -36,13 +35,13 @@ export const SPEAKERS_DATA: Speaker[] = [
   },
   {
     id: "sp-03",
-    name: "Speaker 03",
-    profession: "Name Coming Soon",
-    organization: "Digital Arts & Human Expression",
-    talkTitle: "Synthetic Creativity and the Soul of Storytelling",
-    category: "Art & Culture",
-    bio: "Full speaker biography and background will be revealed soon. Exploring how algorithms and raw human vulnerability intertwine.",
-    whyMatters: "As automated intelligence accelerates, human empathy, emotion, and nuance become the defining currency of art.",
+    name: "Ms. Amala Akkineni",
+    profession: "Conservation & Arts",
+    organization: "Animal Welfare Crusader, Actor & Educator",
+    talkTitle: "Compassion as Resistance: Living Beyond Consumerist Demands",
+    category: "Conservation & Arts",
+    bio: "Iconic actor, co-founder of Blue Cross of Hyderabad, and visionary director at Annapurna College of Film and Media. Over three decades, she has pioneered grassroots animal welfare, creative mentorship, and ecological stewardship.",
+    whyMatters: "In a hyper-competitive world demanding constant material metrics of success, embracing quiet empathy, animal welfare, and creative integrity is an act of radical courage.",
     image: "/speakers/placeholder-3.jpg",
     placeholderIndex: 3,
     socials: {
@@ -52,50 +51,19 @@ export const SPEAKERS_DATA: Speaker[] = [
   },
   {
     id: "sp-04",
-    name: "Speaker 04",
-    profession: "Name Coming Soon",
-    organization: "Environmental Resilience & Ecology",
-    talkTitle: "Circular Horizons: Healing Urban Ecosystems",
-    category: "Environment",
-    bio: "Full speaker biography and background will be revealed soon. An urgent dive into regenerative systems designed for the next century.",
-    whyMatters: "Local environmental interventions scale exponentially when integrated into modern architectural and civic planning.",
+    name: "Mr. Pawan Kumar Chandana",
+    profession: "Aerospace & Innovation",
+    organization: "Co-Founder & CEO, Skyroot Aerospace",
+    talkTitle: "Reaching Orbital Velocity Against Staggering Odds",
+    category: "Aerospace & Innovation",
+    bio: "Former ISRO scientist who co-founded Skyroot Aerospace, leading the historic launch of 'Vikram-S' — India's very first privately developed rocket. He is revolutionizing access to space with cost-effective satellite launch vehicles.",
+    whyMatters: "Breakthrough innovation requires daring to fail when society expects you to play it safe. Pawan's journey proves that youth-led engineering can challenge global aerospace monopolies.",
     image: "/speakers/placeholder-4.jpg",
     placeholderIndex: 4,
     socials: {
       twitter: "#",
       linkedin: "#"
     }
-  },
-  {
-    id: "sp-05",
-    name: "Speaker 05",
-    profession: "Name Coming Soon",
-    organization: "Cognitive Neuroscience & Education",
-    talkTitle: "Neuroplasticity and the Unbound Mind",
-    category: "Mind & Health",
-    bio: "Full speaker biography and background will be revealed soon. Investigating lifelong learning dynamics and cognitive adaptation.",
-    whyMatters: "Empowering young thinkers with cognitive frameworks prepares them to thrive amidst unprecedented technological acceleration.",
-    image: "/speakers/placeholder-5.jpg",
-    placeholderIndex: 5,
-    socials: {
-      linkedin: "#"
-    }
-  },
-  {
-    id: "sp-06",
-    name: "Speaker 06",
-    profession: "Name Coming Soon",
-    organization: "Youth Leadership & Entrepreneurship",
-    talkTitle: "The Catalyst: Building Against the Odds",
-    category: "Youth & Innovation",
-    bio: "Full speaker biography and background will be revealed soon. A candid reflection on turning juvenile curiosity into radical social enterprise.",
-    whyMatters: "Youth initiatives are no longer testbeds—they are the foundational engines driving immediate societal evolution.",
-    image: "/speakers/placeholder-6.jpg",
-    placeholderIndex: 6,
-    socials: {
-      twitter: "#",
-      linkedin: "#",
-      website: "#"
-    }
   }
 ];
+

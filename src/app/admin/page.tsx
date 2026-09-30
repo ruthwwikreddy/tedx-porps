@@ -253,8 +253,8 @@ export default function AdminPage() {
   const facultyCount = bookings.filter((b) => b.ticketTier === 'faculty').length;
   const generalCount = bookings.filter((b) => b.ticketTier === 'general').length;
   const revenue = bookings
-    .filter((b) => b.ticketTier === 'general' && (b.paymentStatus === 'approved' || b.paymentStatus === 'pending'))
-    .reduce((sum, b) => sum + (b.totalPrice || 299 * (b.quantity || 1)), 0);
+    .filter((b) => b.paymentStatus === 'approved' || b.paymentStatus === 'pending')
+    .reduce((sum, b) => sum + (b.totalPrice || (b.ticketTier === 'student' ? 1200 : b.ticketTier === 'general' ? 299 : 0) * (b.quantity || 1)), 0);
 
   const paymentBadge = (p: PaymentStatus) => {
     switch (p) {
@@ -575,7 +575,7 @@ export default function AdminPage() {
               </h3>
               <div className="space-y-4">
                 {[
-                  { label: 'Students (Free)', count: studentCount, color: '#eb0028' },
+                  { label: 'Students (₹1200)', count: studentCount, color: '#eb0028' },
                   { label: 'Faculty & Staff (Free)', count: facultyCount, color: '#6366f1' },
                   { label: 'General Attendees (₹299)', count: generalCount, color: '#f59e0b' },
                 ].map((item) => (
@@ -857,7 +857,7 @@ export default function AdminPage() {
 
                           {/* Amount */}
                           <td className="px-4 py-3 font-mono font-bold text-white whitespace-nowrap">
-                            {b.ticketTier === 'general' ? `₹${b.totalPrice || 299 * (b.quantity || 1)}` : 'Free'}
+                            {b.totalPrice ? `₹${b.totalPrice}` : b.ticketTier === 'student' ? `₹${1200 * (b.quantity || 1)}` : b.ticketTier === 'general' ? `₹${299 * (b.quantity || 1)}` : 'Free'}
                           </td>
 
                           {/* Screenshot Proof */}
@@ -986,7 +986,7 @@ export default function AdminPage() {
             </div>
 
             {/* Payment Verification Banner */}
-            {selectedBooking.ticketTier === 'general' && (
+            {(selectedBooking.paymentStatus === 'pending' || selectedBooking.paymentStatus === 'approved' || selectedBooking.paymentStatus === 'rejected' || selectedBooking.screenshotUrl || (selectedBooking.totalPrice && selectedBooking.totalPrice > 0)) && (
               <div
                 className={`p-4 rounded-xl mb-5 border ${
                   selectedBooking.paymentStatus === 'approved'
@@ -1001,9 +1001,9 @@ export default function AdminPage() {
                   <span>{selectedBooking.paymentStatus}</span>
                 </div>
                 <div className="text-xs text-neutral-300">
-                  Amount Due:{' '}
+                  Amount:{' '}
                   <span className="font-bold text-white">
-                    ₹{selectedBooking.totalPrice || 299 * (selectedBooking.quantity || 1)}
+                    ₹{selectedBooking.totalPrice || (selectedBooking.ticketTier === 'student' ? 1200 : 299) * (selectedBooking.quantity || 1)}
                   </span>{' '}
                   ({selectedBooking.quantity || 1} Ticket
                   {(selectedBooking.quantity || 1) > 1 ? 's' : ''})
@@ -1166,6 +1166,20 @@ export default function AdminPage() {
           </div>
         </div>
       )}
+      {/* Footer credit */}
+      <footer className="relative z-10 border-t border-white/8 py-6 px-4 text-center text-xs font-mono text-neutral-500">
+        <p>
+          TEDxPORPS YOUTH Admin Portal &bull; Made by{' '}
+          <a
+            href="https://ruthwikreddy.live"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#eb0028] font-bold underline transition-colors"
+          >
+            Ruthwik Reddy
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }

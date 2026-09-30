@@ -14,30 +14,59 @@ export const AboutTedx: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Editorial Visual Card */}
+          {/* Editorial Visual Card with Official License Confirmation */}
           <div className="lg:col-span-5 relative group">
-            <div className="aspect-[4/5] rounded-3xl bg-neutral-900 border border-neutral-800 overflow-hidden relative flex flex-col justify-between p-8 shadow-2xl">
+            <div className="rounded-3xl bg-neutral-900 border border-neutral-800 overflow-hidden relative p-7 shadow-2xl flex flex-col justify-between">
               {/* Graphic TEDx background element */}
               <div className="absolute -right-8 -bottom-8 w-64 h-64 bg-[#eb0028]/10 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="relative z-10 flex justify-between items-start">
-                <span className="text-xs font-mono tracking-widest text-[#eb0028] uppercase border border-[#eb0028]/30 px-3 py-1 rounded-full bg-red-950/20">
-                  Global License
+              <div className="relative z-10 flex justify-between items-center mb-6">
+                <span className="text-[11px] font-mono tracking-widest text-[#eb0028] uppercase border border-[#eb0028]/30 px-3 py-1 rounded-full bg-red-950/20 font-bold">
+                  Official TED License
                 </span>
-                <span className="text-2xl font-black text-neutral-700">x</span>
+                <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                  ✓ Verified
+                </span>
               </div>
 
-              <div className="relative z-10 my-auto text-center py-8">
-                <div className="text-6xl sm:text-7xl font-black tracking-tighter text-white">
+              <div className="relative z-10 my-4 text-center">
+                <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">
                   TED<span className="text-[#eb0028]">x</span>
                 </div>
-                <p className="text-xs uppercase tracking-widest font-mono text-neutral-400 mt-2">
+                <div className="text-xs uppercase tracking-widest font-mono text-neutral-300 font-bold mt-1">
+                  PORPS Youth 2026
+                </div>
+                <p className="text-[11px] uppercase tracking-wider font-mono text-neutral-400 mt-1">
                   x = independently organized event
                 </p>
               </div>
 
-              <div className="relative z-10 pt-4 border-t border-neutral-800 text-xs font-mono text-neutral-400">
-                Operated under official license granted by TED Conferences LLC.
+              {/* License Approval Snippet from Slide 17 */}
+              <div className="relative z-10 p-4 rounded-2xl bg-black/50 border border-white/8 my-3">
+                <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-neutral-500 mb-1">
+                  <span>TED Applications Approval</span>
+                  <span className="text-[#eb0028] font-bold">21 August 2026</span>
+                </div>
+                <p className="text-xs text-neutral-300 leading-relaxed font-light">
+                  Confirmed approval granted by TED Conferences for TEDxPORPS Youth. Operating in full compliance with global TED parameters.
+                </p>
+                <div className="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between">
+                  <a
+                    href="/images/tedx-license.png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-mono text-neutral-400 hover:text-white flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>View License Certificate</span>
+                    <span className="text-[#eb0028]">&rarr;</span>
+                  </a>
+                  <span className="text-[10px] font-mono text-neutral-600">ID: TEDx-PORPS-26</span>
+                </div>
+              </div>
+
+              <div className="relative z-10 pt-3 border-t border-neutral-800 text-[11px] font-mono text-neutral-500 flex items-center justify-between">
+                <span>P. Obul Reddy Public School</span>
+                <span>Hyderabad</span>
               </div>
             </div>
           </div>
@@ -53,27 +82,27 @@ export const AboutTedx: React.FC = () => {
             </p>
 
             <p className="text-base leading-relaxed text-neutral-400">
-              At our event, <strong className="text-white">{EVENT_CONFIG.name}</strong>, live speakers and curated performances will spark deep dialogue and connection. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are independently self-organized by our passionate student community.
+              At our event, <strong className="text-white">{EVENT_CONFIG.name}</strong>, live speakers and curated youth dialogues will challenge conventional wisdom. Operating under official license from TED granted on 21 August 2026, this event is independently led by students and faculty at P. Obul Reddy Public School, Jubilee Hills, Hyderabad.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800">
                 <div className="text-sm font-bold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#eb0028]" />
-                  TED
+                  Global TED Mission
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Annual global conferences celebrating technology, entertainment, and design at massive scale.
+                  International conference platform honoring boundary-pushing technology, entertainment, and design across the globe.
                 </p>
               </div>
 
               <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800">
                 <div className="text-sm font-bold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-white" />
-                  TEDx Event
+                  Independent TEDx Youth
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Independently organized community events fostering localized dialogue and ground-breaking stories.
+                  A student-led crucible for transformative local ideas, global mindsets, and unfiltered dialogue right here in Hyderabad.
                 </p>
               </div>
             </div>
@@ -83,3 +112,4 @@ export const AboutTedx: React.FC = () => {
     </section>
   );
 };
+

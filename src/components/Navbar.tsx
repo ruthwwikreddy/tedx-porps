@@ -101,15 +101,6 @@ export const Navbar: React.FC = () => {
                   Tickets
                 </Link>
               )}
-              {/* Pitch Deck Button (Desktop) */}
-              <a
-                href="/pitchdesk.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden xl:inline-flex px-3.5 py-2 text-xs font-mono uppercase tracking-widest text-red-400 hover:text-white bg-red-950/40 hover:bg-red-900/50 border border-red-500/30 rounded-xl transition-all font-semibold"
-              >
-                Pitch Deck
-              </a>
 
               {/* Secondary Designs Button (Desktop) */}
               <Link
@@ -214,16 +205,6 @@ export const Navbar: React.FC = () => {
                   <span>Book Ticket</span>
                 </Link>
               )}
-              <a
-                href="/pitchdesk.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className="py-3 px-5 rounded-xl bg-red-950/50 border border-red-500/40 hover:bg-red-900/50 text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2"
-              >
-                <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-ping" />
-                <span>Pitch Deck &rarr;</span>
-              </a>
 
               <Link
                 href="/sample-designs"

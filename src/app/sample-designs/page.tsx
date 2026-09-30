@@ -172,9 +172,17 @@ export default function SampleDesignsPage() {
       </div>
 
       {/* Footer */}
-      <div className="max-w-6xl mx-auto w-full pt-16 mt-16 border-t border-neutral-900 text-center text-xs font-mono text-neutral-500">
-        TEDx PORPS YOUTH • {EVENT_CONFIG.dateText} • Sample Designs Archive
-      </div>
+      <footer className="max-w-6xl mx-auto w-full pt-16 mt-16 border-t border-neutral-900 text-center text-xs font-mono text-neutral-500">
+        TEDx PORPS YOUTH • {EVENT_CONFIG.dateText} • Made by{' '}
+        <a
+          href="https://ruthwikreddy.live"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-[#eb0028] font-bold underline transition-colors"
+        >
+          Ruthwik Reddy
+        </a>
+      </footer>
     </main>
   );
 }

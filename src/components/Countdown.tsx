@@ -86,7 +86,7 @@ export const Countdown: React.FC = () => {
             Counting Down to {EVENT_CONFIG.dateText}
           </h2>
           <p className="text-xs sm:text-sm text-neutral-400 font-mono mt-2">
-            Target Year: {EVENT_CONFIG.year} • PORPS YOUTH
+            Target Year: {EVENT_CONFIG.year} • {EVENT_CONFIG.schoolName}
           </p>
         </div>
 

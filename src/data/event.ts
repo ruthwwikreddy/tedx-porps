@@ -72,31 +72,53 @@ export interface UpdateItem {
 }
 
 export const EVENT_CONFIG = {
-  name: "TEDx PORPS YOUTH",
-  schoolName: "PORPS YOUTH",
-  shortName: "TEDxPORPS",
+  name: "TEDxPORPS Youth 2026",
+  schoolName: "P. Obul Reddy Public School",
+  shortName: "TEDxPORPS Youth",
   dateText: "21 NOVEMBER",
   eventDateISO: "2026-11-21T09:00:00+05:30",
   year: "2026",
-  theme: "[EVENT THEME]",
-  themeSubtitle: "One theme. Many perspectives.",
-  themeDescription: "A collective exploration of transformative breakthroughs, bold voices, and the emergent ideas shaping tomorrow. The official theme statement will be unveiled as the countdown continues.",
-  tagline: "A day of ideas, conversations and perspectives worth spreading.",
+  theme: "THE WEIGHT OF EXPECTATIONS",
+  themeSubtitle: "Examining the invisible pressures that frame modern development.",
+  themeDescription: "Every generation inherits structures built long before their birth. This year, we dissect the burden placed on youth across five core dimensions: Family, School, Society, Culture, and Ourselves.",
+  tagline: "The next ideas start here. A student-led crucible for transformative local ideas, global mindsets, and unfiltered dialogue.",
   venue: {
-    name: "PORPS YOUTH Auditorium",
+    name: "P. Obul Reddy Public School Auditorium",
     address: "Road No. 25, Jubilee Hills, Hyderabad, Telangana 500033",
-    mapEmbedUrl: "",
+    mapEmbedUrl: "https://maps.google.com/?q=P.+Obul+Reddy+Public+School+Hyderabad",
     city: "Hyderabad, India"
   },
   contact: {
-    email: "tedx@porps.edu.in",
-    instagram: "@tedxporps",
+    email: "yananyaanu@gmail.com",
+    coOrganiser1: {
+      name: "Yelamanchili Ananya",
+      role: "Co-Organiser",
+      email: "yananyaanu@gmail.com",
+      phone: "8977540506"
+    },
+    coOrganiser2: {
+      name: "Abhirami Vutla",
+      role: "Co-Organiser",
+      email: "Abhiramivutla@gmail.com",
+      phone: "+91 99593 02051"
+    },
+    teacherOrganiser: {
+      name: "Ms. C. Shruti Reddy",
+      role: "Teacher Organiser",
+      school: "P. Obul Reddy Public School",
+      phone: "+91 91 77071 678"
+    },
+    instagram: "@tedxporpsyouth",
     instagramUrl: "https://instagram.com",
     twitter: "@tedxporps",
     linkedin: "tedx-porps"
   },
-  disclaimer: "This independent TEDx event is operated under license from TED.",
+  disclaimer: "This independent TEDx event is operated under official license from TED Conferences LLC. Approved by TEDx Applications on 21 August 2026.",
+  licenseApprovedDate: "21 August 2026",
+  licenseImage: "/images/tedx-license.png",
+  sponsorshipThreshold: "₹50,000+",
   BOOKING_ENABLED: true,
-  bookingCtaText: "Book Your Ticket",
+  bookingCtaText: "Book Student Pass (₹1200)",
   bookingUrl: "/tickets"
 };
+

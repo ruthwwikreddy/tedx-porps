@@ -32,8 +32,8 @@ interface FormData {
 const TICKET_TIERS = {
   student: {
     label: 'Student',
-    price: 0,
-    priceLabel: 'Free',
+    price: 1200,
+    priceLabel: '₹1200',
     description: 'PORPS YOUTH students only',
     color: '#eb0028',
     features: ['Full Event Access', 'Welcome Kit', 'Certificate of Participation', 'Priority Seating'],
@@ -58,6 +58,9 @@ const TICKET_TIERS = {
     badge: '',
   },
 };
+
+// Only show the student tier publicly
+const VISIBLE_TIERS: TicketTier[] = ['student'];
 
 const GRADES = [
   'Grade 6',
@@ -117,8 +120,9 @@ export default function TicketsPage() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
 
   const spotsLeft = 187;
-  const selectedTier = TICKET_TIERS[form.ticketTier];
-  const totalPrice = form.ticketTier === 'general' ? 299 * form.quantity : 0;
+  const selectedTier = TICKET_TIERS[form.ticketTier] || TICKET_TIERS.student;
+  const ticketPrice = selectedTier?.price ?? 1200;
+  const totalPrice = ticketPrice * form.quantity;
 
   useEffect(() => {
     // Pre-generate bookingId so user can see it in payment reference
@@ -168,7 +172,7 @@ export default function TicketsPage() {
     const e: Partial<Record<keyof FormData, string>> = {};
     if (!form.agreeToTerms) e.agreeToTerms = 'Please accept the terms to proceed';
 
-    if (form.ticketTier === 'general') {
+    if (totalPrice > 0) {
       if (!screenshotFile) {
         setPaymentError('Please upload your payment screenshot after completing UPI transfer');
         return false;
@@ -191,8 +195,8 @@ export default function TicketsPage() {
         let screenshotUrl = '';
         let screenshotFallback = '';
 
-        // If general tier and screenshot provided, upload
-        if (form.ticketTier === 'general' && screenshotFile) {
+        // If paid tier and screenshot provided, upload
+        if (totalPrice > 0 && screenshotFile) {
           const uploadRes = await uploadPaymentScreenshot(currentBookingId, screenshotFile);
           screenshotUrl = uploadRes.url;
           screenshotFallback = uploadRes.dataUrl;
@@ -214,8 +218,8 @@ export default function TicketsPage() {
           totalPrice,
           dietaryPreference: form.dietaryPreference,
           timestamp: new Date().toISOString(),
-          status: form.ticketTier === 'general' ? 'pending_verification' : 'confirmed',
-          paymentStatus: form.ticketTier === 'general' ? 'pending' : 'free',
+          status: totalPrice > 0 ? 'pending_verification' : 'confirmed',
+          paymentStatus: totalPrice > 0 ? 'pending' : 'free',
           paymentUpiId: upiId,
           transactionId: transactionId.trim(),
           screenshotUrl: screenshotUrl || screenshotFallback,
@@ -237,14 +241,15 @@ export default function TicketsPage() {
   };
 
   const copyDetails = async () => {
-    const text = `TEDx PORPS YOUTH — Booking\nBooking ID: ${bookingId}\nName: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\nTicket: ${selectedTier.label}\nStatus: ${
-      form.ticketTier === 'general' ? 'Payment Pending Admin Approval' : 'Confirmed'
+    const text = `TEDx PORPS YOUTH — Booking\nBooking ID: ${bookingId}\nName: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\nTicket: ${selectedTier.label} (₹${totalPrice})\nStatus: ${
+      totalPrice > 0 ? 'Payment Pending Admin Approval' : 'Confirmed'
     }\nVenue: ${EVENT_CONFIG.venue.name}, ${EVENT_CONFIG.venue.city}`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
+
       // Ignore
     }
   };
@@ -340,7 +345,7 @@ export default function TicketsPage() {
             <div className="flex items-center justify-center gap-3 mb-10">
               {([
                 '1. Attendee Details',
-                form.ticketTier === 'general' ? '2. Review & UPI Pay' : '2. Review & Confirm',
+                totalPrice > 0 ? '2. Review & UPI Pay' : '2. Review & Confirm',
               ] as const).map((label, idx) => {
                 const s = idx + 1;
                 const active = step === s;
@@ -373,9 +378,9 @@ export default function TicketsPage() {
 
             {/* Ticket Tier Selector */}
             {step === 1 && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-1 max-w-sm mx-auto gap-4 mb-8">
                 {(
-                  Object.entries(TICKET_TIERS) as [TicketTier, (typeof TICKET_TIERS)['student']][]
+                  (Object.entries(TICKET_TIERS) as [TicketTier, (typeof TICKET_TIERS)['student']][]).filter(([key]) => VISIBLE_TIERS.includes(key))
                 ).map(([key, tier]) => {
                   const isSelected = form.ticketTier === key;
                   return (
@@ -652,32 +657,30 @@ export default function TicketsPage() {
                         </>
                       )}
 
-                      {/* Quantity for general */}
-                      {form.ticketTier === 'general' && (
-                        <div>
-                          <label
-                            htmlFor="quantity"
-                            className="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-2"
-                          >
-                            Number of Tickets
-                          </label>
-                          <select
-                            id="quantity"
-                            value={form.quantity}
-                            onChange={(e) => update('quantity', Number(e.target.value))}
-                            className="w-full px-4 py-3 rounded-xl bg-[#0a0a0c] border border-white/10 text-white focus:outline-none focus:border-[#eb0028]/50 transition-all text-sm"
-                          >
-                            {[1, 2, 3, 4, 5].map((n) => (
-                              <option key={n} value={n}>
-                                {n} Ticket{n > 1 ? 's' : ''} (₹{299 * n})
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      )}
+                      {/* Ticket Quantity */}
+                      <div>
+                        <label
+                          htmlFor="quantity"
+                          className="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-2"
+                        >
+                          Number of Tickets
+                        </label>
+                        <select
+                          id="quantity"
+                          value={form.quantity}
+                          onChange={(e) => update('quantity', Number(e.target.value))}
+                          className="w-full px-4 py-3 rounded-xl bg-[#0a0a0c] border border-white/10 text-white focus:outline-none focus:border-[#eb0028]/50 transition-all text-sm"
+                        >
+                          {[1, 2, 3, 4, 5].map((n) => (
+                            <option key={n} value={n}>
+                              {n} Ticket{n > 1 ? 's' : ''} (₹{ticketPrice * n})
+                            </option>
+                          ))}
+                        </select>
+                      </div>
 
                       {/* Dietary */}
-                      <div className={form.ticketTier === 'student' ? 'sm:col-span-2' : ''}>
+                      <div>
                         <label
                           htmlFor="dietary"
                           className="block text-xs font-mono uppercase tracking-wider text-neutral-500 mb-2"
@@ -725,9 +728,7 @@ export default function TicketsPage() {
                                 ['Parent', form.parentName || '—'],
                               ]
                             : []),
-                          ...(form.ticketTier === 'general'
-                            ? [['Qty', `${form.quantity} ticket${form.quantity > 1 ? 's' : ''}`]]
-                            : []),
+                          ['Tickets', `${form.quantity} pass${form.quantity > 1 ? 'es' : ''} (₹${totalPrice})`],
                           ['Dietary', form.dietaryPreference],
                         ].map(([label, val]) => (
                           <React.Fragment key={label}>
@@ -740,8 +741,8 @@ export default function TicketsPage() {
                       </div>
                     </div>
 
-                    {/* General Tier: Full UPI QR + Screenshot Upload */}
-                    {form.ticketTier === 'general' ? (
+                    {/* Paid Tier: Full UPI QR + Screenshot Upload */}
+                    {totalPrice > 0 ? (
                       <UpiPaymentBox
                         amount={totalPrice}
                         bookingId={bookingId}
@@ -863,7 +864,7 @@ export default function TicketsPage() {
                       </div>
                     </div>
 
-                    {form.ticketTier === 'general' && form.quantity > 1 && (
+                    {form.quantity > 1 && (
                       <div className="flex justify-between text-xs text-neutral-500">
                         <span>× {form.quantity} tickets</span>
                         <span>₹{totalPrice}</span>
@@ -879,7 +880,7 @@ export default function TicketsPage() {
                       </span>
                     </div>
 
-                    {form.ticketTier === 'general' && (
+                    {totalPrice > 0 && (
                       <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300">
                         ⚡ UPI ID: <span className="font-mono font-bold text-white">{upiId}</span>
                       </div>
@@ -947,8 +948,8 @@ export default function TicketsPage() {
                   </>
                 ) : step === 1 ? (
                   'Continue to Payment / Review →'
-                ) : form.ticketTier === 'general' ? (
-                  'Submit Payment & Book Ticket →'
+                ) : totalPrice > 0 ? (
+                  'Submit Payment Proof & Book Ticket →'
                 ) : (
                   'Confirm Booking →'
                 )}
@@ -969,12 +970,12 @@ export default function TicketsPage() {
                 {/* Status Icon */}
                 <div
                   className={`w-20 h-20 rounded-full border-2 flex items-center justify-center mx-auto mb-6 ${
-                    form.ticketTier === 'general'
+                    totalPrice > 0
                       ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
                       : 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
                   }`}
                 >
-                  {form.ticketTier === 'general' ? (
+                  {totalPrice > 0 ? (
                     <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -997,22 +998,22 @@ export default function TicketsPage() {
 
                 <div
                   className={`text-xs font-mono uppercase tracking-widest mb-2 font-bold ${
-                    form.ticketTier === 'general' ? 'text-amber-400' : 'text-emerald-400'
+                    totalPrice > 0 ? 'text-amber-400' : 'text-emerald-400'
                   }`}
                 >
-                  {form.ticketTier === 'general'
+                  {totalPrice > 0
                     ? 'Payment Proof Submitted'
                     : 'Booking Confirmed!'}
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl font-black uppercase text-white mb-2">
-                  {form.ticketTier === 'general' ? 'Verification Pending' : "You're In!"}
+                  {totalPrice > 0 ? 'Verification Pending' : "You're In!"}
                 </h2>
                 <p className="text-neutral-400 text-sm mb-7">
                   Thank you, <span className="text-white font-semibold">{form.firstName}</span>!{' '}
-                  {form.ticketTier === 'general'
-                    ? 'Our admin team is reviewing your payment screenshot. You will receive final pass confirmation shortly.'
-                    : 'Your spot at TEDx PORPS YOUTH is secured.'}
+                  {totalPrice > 0
+                    ? `Your payment screenshot for ₹${totalPrice} is being verified against UPI ID ${upiId}. Our organizing committee will approve your pass shortly.`
+                    : 'Your spot at TEDxPORPS Youth 2026 is secured.'}
                 </p>
 
                 {/* Booking ID Box */}
@@ -1032,14 +1033,14 @@ export default function TicketsPage() {
                 <div className="grid grid-cols-2 gap-3 text-sm mb-6">
                   {[
                     ['Date', `${EVENT_CONFIG.dateText}, ${EVENT_CONFIG.year}`],
-                    ['Tier', selectedTier.label],
+                    ['Tier', `${selectedTier.label} (${form.quantity} ticket${form.quantity > 1 ? 's' : ''})`],
                     [
                       'Payment',
-                      form.ticketTier === 'general'
-                        ? 'Pending Admin Approval'
+                      totalPrice > 0
+                        ? `₹${totalPrice} (Under Review)`
                         : 'Free / Confirmed',
                     ],
-                    ['Doors Open', '8:30 AM'],
+                    ['Doors Open', '08:30 AM IST'],
                   ].map(([l, v]) => (
                     <div key={l} className="p-3 rounded-xl bg-white/3 border border-white/5">
                       <div className="text-[10px] text-neutral-600 font-mono uppercase tracking-wider mb-0.5">
@@ -1064,7 +1065,7 @@ export default function TicketsPage() {
                     What Happens Next?
                   </div>
                   <ul className="text-xs text-neutral-400 space-y-1.5">
-                    {form.ticketTier === 'general' ? (
+                    {totalPrice > 0 ? (
                       <>
                         <li>
                           ✓ Admin will review your screenshot against UPI ID{' '}
@@ -1074,7 +1075,7 @@ export default function TicketsPage() {
                           ✓ Check status anytime using the{' '}
                           <strong className="text-white">&ldquo;Check Status&rdquo;</strong> button above.
                         </li>
-                        <li>✓ Once approved, present your Booking ID at registration desk.</li>
+                        <li>✓ Once approved, present your Booking ID at the registration desk on 21 November 2026.</li>
                       </>
                     ) : (
                       <>
@@ -1201,6 +1202,20 @@ export default function TicketsPage() {
           </div>
         </div>
       )}
+      {/* Footer credit */}
+      <footer className="relative z-10 border-t border-white/8 py-8 px-4 text-center text-xs font-mono text-neutral-500">
+        <p>
+          TEDxPORPS YOUTH &bull; Made by{' '}
+          <a
+            href="https://ruthwikreddy.live"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#eb0028] font-bold underline transition-colors"
+          >
+            Ruthwik Reddy
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }
