@@ -704,36 +704,55 @@ async function createDeck() {
     addHeader(slide, '19 — Direct Enquiries', 19);
 
     // Organiser 1
-    slide.addText('GET IN TOUCH', {
-      x: 0.8, y: 1.2, w: 4.0, h: 0.25, fontSize: 10, bold: true, color: TED_RED, fontFace: 'Helvetica'
+    slide.addText('CO-ORGANISER', {
+      x: 0.6, y: 1.2, w: 2.7, h: 0.25, fontSize: 9.5, bold: true, color: TED_RED, fontFace: 'Helvetica'
     });
     slide.addText('Yelamanchili Ananya', {
-      x: 0.8, y: 1.5, w: 4.0, h: 0.5, fontSize: 20, bold: true, color: BLACK, fontFace: 'Helvetica'
+      x: 0.6, y: 1.5, w: 2.7, h: 0.45, fontSize: 17, bold: true, color: BLACK, fontFace: 'Helvetica'
     });
     slide.addText('Co-Organiser, TEDxPORPS Youth 2026', {
-      x: 0.8, y: 2.0, w: 4.0, h: 0.35, fontSize: 12, bold: true, color: TEXT_MUTED, fontFace: 'Helvetica'
+      x: 0.6, y: 1.95, w: 2.7, h: 0.35, fontSize: 11, bold: true, color: TEXT_MUTED, fontFace: 'Helvetica'
     });
     slide.addText('Email: yananyaanu@gmail.com\nPhone: 8977540506', {
-      x: 0.8, y: 2.45, w: 4.0, h: 0.8, fontSize: 12, color: BLACK, fontFace: 'Helvetica', lineSpacing: 18
+      x: 0.6, y: 2.4, w: 2.7, h: 0.8, fontSize: 11, color: BLACK, fontFace: 'Helvetica', lineSpacing: 16
     });
 
-    // Divider
+    // Divider 1
     slide.addShape(pptx.ShapeType.line, {
-      x: 5.0, y: 1.4, w: 0, h: 3.2, line: { color: BORDER_COLOR, width: 1 }
+      x: 3.5, y: 1.4, w: 0, h: 3.2, line: { color: BORDER_COLOR, width: 1 }
     });
 
     // Organiser 2
-    slide.addText('CO-CURATOR', {
-      x: 5.3, y: 1.2, w: 3.9, h: 0.25, fontSize: 10, bold: true, color: TED_RED, fontFace: 'Helvetica'
+    slide.addText('CO-ORGANISER', {
+      x: 3.8, y: 1.2, w: 2.7, h: 0.25, fontSize: 9.5, bold: true, color: TED_RED, fontFace: 'Helvetica'
     });
     slide.addText('Abhirami Vutla', {
-      x: 5.3, y: 1.5, w: 3.9, h: 0.5, fontSize: 20, bold: true, color: BLACK, fontFace: 'Helvetica'
+      x: 3.8, y: 1.5, w: 2.7, h: 0.45, fontSize: 17, bold: true, color: BLACK, fontFace: 'Helvetica'
     });
     slide.addText('Co-Organiser, TEDxPORPS Youth 2026', {
-      x: 5.3, y: 2.0, w: 3.9, h: 0.35, fontSize: 12, bold: true, color: TEXT_MUTED, fontFace: 'Helvetica'
+      x: 3.8, y: 1.95, w: 2.7, h: 0.35, fontSize: 11, bold: true, color: TEXT_MUTED, fontFace: 'Helvetica'
     });
-    slide.addText('P. Obul Reddy Public School\nJubilee Hills, Hyderabad, Telangana\nPhone: +91 99593 02051', {
-      x: 5.3, y: 2.45, w: 3.9, h: 1.0, fontSize: 12, color: BLACK, fontFace: 'Helvetica', lineSpacing: 18
+    slide.addText('Email: Abhiramivutla@gmail.com\nPhone: +91 99593 02051', {
+      x: 3.8, y: 2.4, w: 2.7, h: 0.8, fontSize: 11, color: BLACK, fontFace: 'Helvetica', lineSpacing: 16
+    });
+
+    // Divider 2
+    slide.addShape(pptx.ShapeType.line, {
+      x: 6.7, y: 1.4, w: 0, h: 3.2, line: { color: BORDER_COLOR, width: 1 }
+    });
+
+    // Organiser 3
+    slide.addText('TEACHER ORGANISER', {
+      x: 7.0, y: 1.2, w: 2.7, h: 0.25, fontSize: 9.5, bold: true, color: TED_RED, fontFace: 'Helvetica'
+    });
+    slide.addText('Ms. C. Shruti Reddy', {
+      x: 7.0, y: 1.5, w: 2.7, h: 0.45, fontSize: 17, bold: true, color: BLACK, fontFace: 'Helvetica'
+    });
+    slide.addText('Teacher Organiser, TEDxPORPS Youth 2026', {
+      x: 7.0, y: 1.95, w: 2.7, h: 0.35, fontSize: 11, bold: true, color: TEXT_MUTED, fontFace: 'Helvetica'
+    });
+    slide.addText('P. Obul Reddy Public School\nPhone: +91 91 77071 678', {
+      x: 7.0, y: 2.4, w: 2.7, h: 0.8, fontSize: 11, color: BLACK, fontFace: 'Helvetica', lineSpacing: 16
     });
 
     addFooter(slide, 'Contact', 19);

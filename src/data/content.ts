@@ -4,9 +4,9 @@ export const ORGANIZERS_DATA: {
   leadership: OrganizerMember[];
 } = {
   leadership: [
-    { id: "org-1", name: "C. Shruthi Reddy", role: "Faculty Incharge & Co-organiser", category: "Leadership" },
-    { id: "org-2", name: "Ananya Yelamanchalli", role: "Organiser", category: "Leadership" },
-    { id: "org-3", name: "VNS Abhirami Vutla", role: "Organising", category: "Leadership" },
+    { id: "org-1", name: "Ms. C. Shruti Reddy", role: "Teacher Organiser", category: "Leadership" },
+    { id: "org-2", name: "Yelamanchili Ananya", role: "Co-Organiser", category: "Leadership" },
+    { id: "org-3", name: "Abhirami Vutla", role: "Co-Organiser", category: "Leadership" },
     { id: "org-4", name: "Name Coming Soon", role: "Finance and Sponsorship", category: "Finance" },
     { id: "org-5", name: "Name Coming Soon", role: "Production", category: "Production" },
     { id: "org-6", name: "Name Coming Soon", role: "Volunteer Coordination", category: "Management" },
