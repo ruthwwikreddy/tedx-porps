@@ -53,18 +53,32 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Ultra-Sleek CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-8">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          {EVENT_CONFIG.BOOKING_ENABLED && (
+            <Link
+              href={EVENT_CONFIG.bookingUrl}
+              id="hero-book-ticket-btn"
+              className="group relative w-full sm:w-auto px-10 py-4 rounded-full bg-[#eb0028] text-white font-bold text-xs font-mono tracking-widest uppercase transition-all hover:scale-105 active:scale-95 text-center overflow-hidden shadow-2xl shadow-red-900/40"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" /></svg>
+                {EVENT_CONFIG.bookingCtaText}
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            </Link>
+          )}
           <Link
             href="#about"
-            className="group relative w-full sm:w-auto px-12 py-4 rounded-full bg-[#eb0028] text-white font-bold text-xs font-mono tracking-widest uppercase transition-all hover:scale-105 active:scale-95 text-center overflow-hidden shadow-2xl shadow-red-900/40"
+            id="hero-explore-btn"
+            className="group relative w-full sm:w-auto px-10 py-4 rounded-full bg-transparent text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-600 font-semibold text-xs font-mono tracking-widest uppercase transition-all text-center overflow-hidden hover:scale-105 active:scale-95"
           >
             <span className="relative z-10">Enter the Experience</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </Link>
-          
           <Link
             href="#speakers"
-            className="w-full sm:w-auto px-12 py-4 rounded-full bg-transparent text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-600 font-semibold text-xs font-mono tracking-widest uppercase transition-all text-center hover:scale-105 active:scale-95"
+            id="hero-speakers-btn"
+            className="hidden sm:inline-flex w-full sm:w-auto px-10 py-4 rounded-full bg-transparent text-neutral-500 hover:text-neutral-300 border border-neutral-900 hover:border-neutral-800 font-semibold text-xs font-mono tracking-widest uppercase transition-all text-center hover:scale-105 active:scale-95"
           >
             The Speakers
           </Link>

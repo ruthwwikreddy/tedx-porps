@@ -96,8 +96,7 @@ export const EVENT_CONFIG = {
     linkedin: "tedx-porps"
   },
   disclaimer: "This independent TEDx event is operated under license from TED.",
-  // Architecture prepared for future ticketing/booking integration without layout refactoring
-  BOOKING_ENABLED: false,
-  bookingCtaText: "Register / Book Your Spot",
-  bookingUrl: "#"
+  BOOKING_ENABLED: true,
+  bookingCtaText: "Book Your Ticket",
+  bookingUrl: "/tickets"
 };
