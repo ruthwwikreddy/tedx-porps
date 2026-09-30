@@ -283,7 +283,7 @@ export default function TicketsPage() {
       {/* Ambient Background */}
       <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70vw] h-[50vh] bg-[#eb0028]/[0.04] rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 right-0 w-[40vw] h-[40vh] bg-indigo-900/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[40vw] h-[40vh] bg-[#eb0028]/[0.03] rounded-full blur-[120px]" />
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
       </div>
 
@@ -881,7 +881,7 @@ export default function TicketsPage() {
                     </div>
 
                     {totalPrice > 0 && (
-                      <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-300">
+                      <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-[11px] text-neutral-300">
                         ⚡ UPI ID: <span className="font-mono font-bold text-white">{upiId}</span>
                       </div>
                     )}
@@ -971,8 +971,8 @@ export default function TicketsPage() {
                 <div
                   className={`w-20 h-20 rounded-full border-2 flex items-center justify-center mx-auto mb-6 ${
                     totalPrice > 0
-                      ? 'bg-amber-500/15 border-amber-500/40 text-amber-400'
-                      : 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400'
+                      ? 'bg-white/10 border-white/30 text-white'
+                      : 'bg-[#eb0028]/15 border-[#eb0028]/40 text-[#eb0028]'
                   }`}
                 >
                   {totalPrice > 0 ? (
@@ -998,7 +998,7 @@ export default function TicketsPage() {
 
                 <div
                   className={`text-xs font-mono uppercase tracking-widest mb-2 font-bold ${
-                    totalPrice > 0 ? 'text-amber-400' : 'text-emerald-400'
+                    totalPrice > 0 ? 'text-neutral-300' : 'text-[#eb0028]'
                   }`}
                 >
                   {totalPrice > 0
@@ -1170,10 +1170,10 @@ export default function TicketsPage() {
                     className={`px-2.5 py-0.5 rounded-full text-xs font-mono uppercase font-bold ${
                       lookupResult.paymentStatus === 'approved' ||
                       lookupResult.paymentStatus === 'free'
-                        ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                        ? 'bg-white/10 text-white border border-white/25'
                         : lookupResult.paymentStatus === 'rejected'
-                        ? 'bg-red-500/20 text-red-400 border border-red-500/30'
-                        : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                        ? 'bg-[#eb0028]/20 text-[#eb0028] border border-[#eb0028]/30'
+                        : 'bg-neutral-800 text-neutral-300 border border-neutral-700'
                     }`}
                   >
                     {lookupResult.paymentStatus === 'approved'

@@ -24,7 +24,7 @@ export const AboutTedx: React.FC = () => {
                 <span className="text-[11px] font-mono tracking-widest text-[#eb0028] uppercase border border-[#eb0028]/30 px-3 py-1 rounded-full bg-red-950/20 font-bold">
                   Official TED License
                 </span>
-                <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                <span className="text-[11px] font-mono text-white bg-white/10 border border-white/20 px-2.5 py-0.5 rounded-full flex items-center gap-1">
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"/></svg>
                   Verified
                 </span>

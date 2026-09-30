@@ -67,7 +67,7 @@ export default function UpiPaymentBox({
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1.5 rounded-full text-xs font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <span className="px-3 py-1.5 rounded-full text-xs font-mono font-bold bg-white/10 text-white border border-white/20">
               Amount Due: ₹{amount}
             </span>
           </div>
@@ -144,7 +144,7 @@ export default function UpiPaymentBox({
               href={upiLink}
               className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all"
             >
-              <svg className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
               <span>Open Directly in UPI App</span>
             </a>
           </div>
@@ -196,7 +196,7 @@ export default function UpiPaymentBox({
                       alt="Payment screenshot preview"
                       className="max-h-48 rounded-xl object-contain border border-white/10 mb-3 shadow-lg"
                     />
-                    <div className="text-xs font-mono text-emerald-400 font-bold flex items-center gap-1 mb-1">
+                    <div className="text-xs font-mono text-white font-bold flex items-center gap-1 mb-1">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"/></svg>
                       Screenshot Selected ({screenshotFile?.name})
                     </div>

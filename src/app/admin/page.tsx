@@ -259,9 +259,9 @@ export default function AdminPage() {
   const paymentBadge = (p: PaymentStatus) => {
     switch (p) {
       case 'approved':
-        return 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30';
+        return 'bg-white/10 text-white border-white/25';
       case 'pending':
-        return 'bg-amber-500/15 text-amber-400 border-amber-500/30 animate-pulse';
+        return 'bg-neutral-800 text-neutral-300 border-neutral-700 animate-pulse';
       case 'rejected':
         return 'bg-red-500/15 text-red-400 border-red-500/30';
       case 'free':
@@ -417,7 +417,7 @@ export default function AdminPage() {
             >
               {tab.label}
               {tab.id === 'bookings' && pendingPayments > 0 && (
-                <span className="ml-2 px-1.5 py-0.5 rounded-full bg-amber-500 text-black font-black text-[10px]">
+                <span className="ml-2 px-1.5 py-0.5 rounded-full bg-[#eb0028] text-white font-black text-[10px]">
                   {pendingPayments}
                 </span>
               )}
@@ -537,7 +537,7 @@ export default function AdminPage() {
                 </div>
 
                 {qrUploadStatus && (
-                  <p className="text-xs font-mono text-center text-amber-400 mt-2">
+                  <p className="text-xs font-mono text-center text-neutral-300 mt-2">
                     {qrUploadStatus}
                   </p>
                 )}
@@ -640,13 +640,13 @@ export default function AdminPage() {
                 <div
                   className={`mt-4 p-5 rounded-xl border ${
                     checkInResult.success
-                      ? 'bg-green-950/20 border-green-500/30'
+                      ? 'bg-white/5 border-white/15'
                       : 'bg-red-950/20 border-red-500/30'
                   }`}
                 >
                   <div
                     className={`text-base font-bold mb-1 ${
-                      checkInResult.success ? 'text-green-400' : 'text-red-400'
+                      checkInResult.success ? 'text-white' : 'text-red-400'
                     }`}
                   >
                     {checkInResult.success ? '✓ ' : '✗ '}
@@ -692,7 +692,7 @@ export default function AdminPage() {
                     .map((b) => (
                       <div
                         key={b.bookingId}
-                        className="flex items-center justify-between py-2.5 px-3 rounded-xl bg-green-950/10 border border-green-500/20"
+                        className="flex items-center justify-between py-2.5 px-3 rounded-xl bg-white/5 border border-white/10"
                       >
                         <div>
                           <div className="text-sm font-semibold text-white">
@@ -702,7 +702,7 @@ export default function AdminPage() {
                             {b.bookingId} · {TIER_LABEL[b.ticketTier]}
                           </div>
                         </div>
-                        <span className="text-green-400 text-lg">✓</span>
+                        <span className="text-white text-lg">✓</span>
                       </div>
                     ))
                 )}
@@ -721,11 +721,11 @@ export default function AdminPage() {
                 {
                   label: 'Pending Review',
                   value: pendingPayments,
-                  color: pendingPayments > 0 ? 'text-amber-400 font-black animate-pulse' : 'text-neutral-400',
+                  color: pendingPayments > 0 ? 'text-[#eb0028] font-black animate-pulse' : 'text-neutral-400',
                 },
-                { label: 'Approved', value: approvedPayments, color: 'text-emerald-400' },
-                { label: 'Checked In', value: checkedIn, color: 'text-green-400' },
-                { label: 'Free Passes', value: studentCount + facultyCount, color: 'text-blue-400' },
+                { label: 'Approved', value: approvedPayments, color: 'text-white' },
+                { label: 'Checked In', value: checkedIn, color: 'text-white' },
+                { label: 'Free Passes', value: studentCount + facultyCount, color: 'text-neutral-300' },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -899,10 +899,10 @@ export default function AdminPage() {
                             <span
                               className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                                 b.status === 'checked-in'
-                                  ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                  ? 'bg-green-500/20 text-white border border-green-500/30'
                                   : b.status === 'cancelled'
                                   ? 'bg-red-500/20 text-red-400 border border-red-500/30'
-                                  : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                                  : 'bg-blue-500/20 text-neutral-300 border border-blue-500/30'
                               }`}
                             >
                               {b.status}
@@ -917,7 +917,7 @@ export default function AdminPage() {
                                   <button
                                     type="button"
                                     onClick={() => handleApprovePayment(b)}
-                                    className="px-2 py-1 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-800/50 text-[10px] font-mono font-bold transition-all"
+                                    className="px-2 py-1 rounded-lg bg-emerald-950/50 border border-emerald-500/30 text-white hover:bg-emerald-800/50 text-[10px] font-mono font-bold transition-all"
                                   >
                                     ✓ Approve
                                   </button>
@@ -934,7 +934,7 @@ export default function AdminPage() {
                                 <button
                                   type="button"
                                   onClick={() => handleUpdateStatus(b.bookingId, { status: 'checked-in' })}
-                                  className="px-2 py-1 rounded-lg bg-green-950/40 border border-green-500/30 text-green-400 text-[10px] font-mono hover:bg-green-900/50 transition-all"
+                                  className="px-2 py-1 rounded-lg bg-green-950/40 border border-green-500/30 text-white text-[10px] font-mono hover:bg-green-900/50 transition-all"
                                 >
                                   Check In
                                 </button>
@@ -990,10 +990,10 @@ export default function AdminPage() {
               <div
                 className={`p-4 rounded-xl mb-5 border ${
                   selectedBooking.paymentStatus === 'approved'
-                    ? 'bg-emerald-950/20 border-emerald-500/30 text-emerald-400'
+                    ? 'bg-emerald-950/20 border-emerald-500/30 text-white'
                     : selectedBooking.paymentStatus === 'rejected'
                     ? 'bg-red-950/20 border-red-500/30 text-red-400'
-                    : 'bg-amber-950/20 border-amber-500/30 text-amber-400'
+                    : 'bg-neutral-900 border-neutral-700 text-neutral-300'
                 }`}
               >
                 <div className="flex items-center justify-between font-bold text-xs font-mono uppercase mb-1">
@@ -1105,7 +1105,7 @@ export default function AdminPage() {
                 <button
                   type="button"
                   onClick={() => handleApprovePayment(selectedBooking)}
-                  className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-lg"
+                  className="flex-1 py-3 rounded-xl bg-white hover:bg-neutral-200 text-white font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-lg"
                 >
                   ✓ Approve Payment
                 </button>
@@ -1125,7 +1125,7 @@ export default function AdminPage() {
                 <button
                   type="button"
                   onClick={() => handleUpdateStatus(selectedBooking.bookingId, { status: 'checked-in' })}
-                  className="flex-1 py-2.5 rounded-xl bg-green-950/40 border border-green-500/30 text-green-400 text-xs font-mono uppercase hover:bg-green-900/50 transition-all font-bold"
+                  className="flex-1 py-2.5 rounded-xl bg-green-950/40 border border-green-500/30 text-white text-xs font-mono uppercase hover:bg-green-900/50 transition-all font-bold"
                 >
                   ✓ Mark Checked-In
                 </button>

@@ -10,42 +10,37 @@ export const Theme: React.FC = () => {
     {
       num: "01",
       title: "Family",
-      subtitle: "Inherited Legacies & Filial Benchmarks",
-      desc: "Parental sacrifices often transform into unspoken performance debts. We examine how domestic expectations frame early ambitions, self-image, and identity.",
-      accent: "from-red-600/20 to-transparent",
-      tag: "Domestic Dynamics"
+      subtitle: "Inherited expectations & parental benchmarks",
+      desc: "Parental sacrifices often become unspoken performance debts. We look at how home shapes early ambition, self-image, and identity.",
+      tag: "Home"
     },
     {
       num: "02",
       title: "School",
-      subtitle: "Standardized Metrics & Competitive Ranks",
-      desc: "When educational worth is calculated strictly by percentile ranks and test scores, intrinsic intellectual curiosity is eclipsed by performance dread.",
-      accent: "from-amber-600/20 to-transparent",
-      tag: "Academic Pedagogy"
+      subtitle: "Marks, ranks & the pressure to perform",
+      desc: "When a student's worth is reduced to a percentile, the love of learning gets replaced by the fear of failing.",
+      tag: "Education"
     },
     {
       num: "03",
       title: "Society",
-      subtitle: "Collective Conformity & Milestone Timelines",
-      desc: "Community scripts define acceptable careers, marital timelines, and public status. We question the cost of conforming to societal consensus.",
-      accent: "from-rose-600/20 to-transparent",
-      tag: "Civic Structures"
+      subtitle: "Scripts for success we never wrote ourselves",
+      desc: "Community norms define acceptable careers, timelines, and status. We question what it costs to conform.",
+      tag: "Community"
     },
     {
       num: "04",
       title: "Culture",
-      subtitle: "Tradition vs Personal Autonomy",
-      desc: "Balancing time-honored heritage with emergent individual philosophies. Negotiating cultural identity in a hyper-connected, globalized world.",
-      accent: "from-red-500/20 to-transparent",
-      tag: "Cultural Fabric"
+      subtitle: "Tradition vs personal choice",
+      desc: "How do you honour where you come from while still becoming who you want to be in a connected world?",
+      tag: "Heritage"
     },
     {
       num: "05",
       title: "Ourselves",
-      subtitle: "Internalized Perfectionism & Imposter Dread",
-      desc: "The loudest critic often lives within. Unraveling the harsh standards we impose on ourselves to prove worthiness in an era of constant comparison.",
-      accent: "from-purple-600/20 to-transparent",
-      tag: "Intrapersonal Mind"
+      subtitle: "The inner critic we carry everywhere",
+      desc: "The loudest pressure often comes from within. We unpack the standards we impose on ourselves in an age of constant comparison.",
+      tag: "Inner Life"
     }
   ];
 
@@ -63,8 +58,8 @@ export const Theme: React.FC = () => {
           <span>03 // OFFICIAL 2026 THEME</span>
         </div>
 
-        <h2 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-400 mb-2">
-          CONCEPT FOCUS &amp; CONTEXTUAL DEPTH
+        <h2 className="text-xs sm:text-sm font-mono uppercase tracking-widest text-neutral-500 mb-2">
+          The 2026 Theme
         </h2>
 
         {/* Massive Dominant Typography from Slide 5 */}
@@ -138,8 +133,8 @@ export const Theme: React.FC = () => {
                     {dim.desc}
                   </p>
 
-                  <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-neutral-500 group-hover:text-white transition-colors">
-                    <span>Explore Discourse</span>
+                  <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-neutral-600 group-hover:text-neutral-400 transition-colors">
+                    <span>{dim.tag}</span>
                     <span className="text-[#eb0028] group-hover:translate-x-1 transition-transform">&rarr;</span>
                   </div>
                 </div>

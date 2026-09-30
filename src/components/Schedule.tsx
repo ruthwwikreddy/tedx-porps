@@ -7,14 +7,14 @@ export const Schedule: React.FC = () => {
   const getBadgeColor = (category: string) => {
     switch (category) {
       case 'Talk':
-        return 'bg-red-950/40 text-[#eb0028] border-red-900/50';
+        return 'bg-[#eb0028]/20 text-[#eb0028] border-[#eb0028]/30';
       case 'Ceremony':
       case 'Closing':
-        return 'bg-amber-950/40 text-amber-400 border-amber-900/50';
+        return 'bg-white/10 text-white border-white/20';
       case 'Break':
-        return 'bg-emerald-950/40 text-emerald-400 border-emerald-900/50';
+        return 'bg-neutral-800 text-neutral-300 border-neutral-700';
       case 'Interactive':
-        return 'bg-purple-950/40 text-purple-400 border-purple-900/50';
+        return 'bg-neutral-800/80 text-neutral-200 border-neutral-700';
       default:
         return 'bg-neutral-800 text-neutral-300 border-neutral-700';
     }
@@ -32,9 +32,9 @@ export const Schedule: React.FC = () => {
           />
 
           <div className="mb-12">
-            <span className="text-xs font-mono tracking-widest uppercase text-amber-500/90 bg-amber-950/30 border border-amber-900/40 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              Tentative Schedule • Subject to Revision
+            <span className="text-xs font-mono tracking-widest uppercase text-neutral-400 bg-neutral-900 border border-neutral-700 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500 animate-pulse" />
+              Tentative — Subject to change
             </span>
           </div>
         </div>

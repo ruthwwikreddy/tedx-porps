@@ -3,11 +3,8 @@ import { SectionHeading } from './SectionHeading';
 import { ORGANIZERS_DATA } from '@/data/content';
 
 // Department accent colours cycling through a warm palette
-const DEPT_COLORS = [
-  '#eb0028', '#e85d04', '#f48c06', '#7209b7',
-  '#3a0ca3', '#4361ee', '#4cc9f0', '#06d6a0',
-  '#ff006e', '#8338ec',
-];
+// All departments use TEDx brand red — strict black/white/red palette
+const DEPT_COLORS = Array(10).fill('#eb0028');
 
 // Flatten each head into its own card entry
 type PersonCard = {
