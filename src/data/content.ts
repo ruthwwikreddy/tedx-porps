@@ -8,9 +8,14 @@ export const ORGANIZERS_DATA = {
   ],
   executiveBoard: [
     {
-      department: "Photography & Videography Head",
-      heads: ["Sista Vanshika", "Srinidhi Nerella"],
-      badge: "Media"
+      department: "Production Head",
+      heads: ["Yukthi Reddy", "Yash S Parekh"],
+      badge: "Stage & AV"
+    },
+    {
+      department: "Marketing & PR Head",
+      heads: ["Sanvriti M", "G Srinidhi"],
+      badge: "Communications"
     },
     {
       department: "Technical Coordination Head",
@@ -18,9 +23,29 @@ export const ORGANIZERS_DATA = {
       badge: "Tech"
     },
     {
+      department: "Finance & Sponsorship Head",
+      heads: ["Anagha Swara", "Kaustaub Sreekar", "Raga Pranavi Emmadi"],
+      badge: "Finance"
+    },
+    {
+      department: "Photography & Videography Head",
+      heads: ["Sista Vanshika", "Srinidhi Nerella"],
+      badge: "Media"
+    },
+    {
+      department: "Design & Documentation Head",
+      heads: ["Akkenapally Ruthwik Reddy", "G. Sanvi Sree"],
+      badge: "Creative & Web"
+    },
+    {
       department: "Logistics & Hospitality Head",
       heads: ["S. Jyotsna", "A. Sri Parnitha"],
       badge: "Logistics"
+    },
+    {
+      department: "Internal Speaker Training Head",
+      heads: ["Sindusha", "Nidhi More"],
+      badge: "Curation"
     },
     {
       department: "Volunteer Coordination Head",
@@ -31,31 +56,6 @@ export const ORGANIZERS_DATA = {
       department: "Head of Food & Beverage (F&B)",
       heads: ["Vishesh Jain", "Ishan Samatrya"],
       badge: "Hospitality"
-    },
-    {
-      department: "Design & Documentation Head",
-      heads: ["Akkenapally Ruthwik Reddy", "G. Sanvi Sree"],
-      badge: "Creative & Web"
-    },
-    {
-      department: "Internal Speaker Training Head",
-      heads: ["Sindusha", "Nidhi More"],
-      badge: "Curation"
-    },
-    {
-      department: "Finance & Sponsorship Head",
-      heads: ["Anagha Swara", "Kaustaub Sreekar", "Raga Pranavi Emmadi"],
-      badge: "Finance"
-    },
-    {
-      department: "Production Head",
-      heads: ["Yukthi Reddy", "Yash S Parekh"],
-      badge: "Stage & AV"
-    },
-    {
-      department: "Marketing & PR Head",
-      heads: ["Sanvriti M", "G Srinidhi"],
-      badge: "Communications"
     }
   ]
 };
