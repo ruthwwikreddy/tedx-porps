@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Payment screenshots: allow upload and viewing for admin approval
+    match /payment-screenshots/{allPaths=**} {
+      allow read, write: if true;
+    }
+
+    // Admin custom QR settings
+    match /settings/{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}
