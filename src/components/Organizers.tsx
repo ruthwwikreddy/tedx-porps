@@ -11,11 +11,94 @@ function getInitials(name: string) {
     .join('');
 }
 
-export const Organizers: React.FC = () => {
-  const totalEB = ORGANIZERS_DATA.executiveBoard.reduce(
-    (acc, dept) => acc + dept.heads.length,
-    0
+interface FlattenedMember {
+  id: string;
+  name: string;
+  role: string;
+  badge: string;
+  category: string;
+}
+
+const OrganizerCard: React.FC<{ member: FlattenedMember; idx: number }> = ({ member, idx }) => {
+  const initials = getInitials(member.name);
+  return (
+    <div
+      className="relative overflow-hidden rounded-2xl bg-[#111114] border border-neutral-800/80 hover:border-neutral-600 hover:bg-[#15151a] transition-all duration-300 group flex flex-col justify-between p-4 sm:p-5 shadow-lg hover:shadow-2xl hover:-translate-y-1"
+      style={{ minHeight: '155px' }}
+    >
+      {/* Background initials watermark */}
+      <div
+        className="absolute -right-2 -bottom-4 text-[4.5rem] sm:text-[5rem] font-black text-white/[0.03] group-hover:text-white/[0.06] transition-colors leading-none select-none pointer-events-none"
+        aria-hidden="true"
+      >
+        {initials}
+      </div>
+
+      {/* Red top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#eb0028]/20 via-[#eb0028] to-[#eb0028]/20 group-hover:h-[3px] transition-all" />
+
+      <div className="relative flex flex-col justify-between h-full">
+        <div>
+          {/* Top row: badge & number */}
+          <div className="flex items-center justify-between gap-2 mb-3">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#eb0028] flex-shrink-0" />
+              <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#eb0028] font-bold truncate">
+                {member.badge}
+              </span>
+            </div>
+            <span className="text-[9px] font-mono text-neutral-600 uppercase tracking-wider flex-shrink-0">
+              #{String(idx + 1).padStart(2, '0')}
+            </span>
+          </div>
+
+          {/* Name */}
+          <h4 className="text-base sm:text-lg font-bold text-white leading-snug tracking-tight group-hover:text-white transition-colors">
+            {member.name}
+          </h4>
+
+          {/* Role */}
+          <p className="text-xs text-neutral-400 mt-1 font-mono leading-relaxed">
+            {member.role}
+          </p>
+        </div>
+
+        {/* Bottom row: category and initials avatar */}
+        <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+          <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-widest">
+            {member.category}
+          </span>
+          <div className="w-7 h-7 rounded-lg bg-[#eb0028]/10 border border-[#eb0028]/20 flex items-center justify-center group-hover:border-[#eb0028]/40 group-hover:bg-[#eb0028]/20 transition-all flex-shrink-0">
+            <span className="text-[9px] font-black font-mono text-[#eb0028]">{initials}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
+};
+
+export const Organizers: React.FC = () => {
+  // Flatten leadership organizers (Top 3)
+  const leadershipMembers: FlattenedMember[] = ORGANIZERS_DATA.leadership.map((m) => ({
+    id: m.id,
+    name: m.name,
+    role: m.role,
+    badge: m.role.toLowerCase().includes('teacher') ? 'Faculty Lead' : 'Leadership',
+    category: m.category,
+  }));
+
+  // Flatten executive board members adjacent to each other
+  const ebMembers: FlattenedMember[] = ORGANIZERS_DATA.executiveBoard.flatMap((dept, deptIdx) =>
+    dept.heads.map((name, headIdx) => ({
+      id: `eb-${deptIdx}-${headIdx}-${name.toLowerCase().replace(/\s+/g, '-')}`,
+      name,
+      role: dept.department,
+      badge: dept.badge,
+      category: 'Executive Board',
+    }))
+  );
+
+  const totalMembers = leadershipMembers.length + ebMembers.length;
 
   return (
     <section id="organizers" className="py-24 bg-[#0a0a0c] border-t border-white/5 relative">
@@ -27,156 +110,37 @@ export const Organizers: React.FC = () => {
           subtitle="Student-led from start to finish. Every department, every detail."
         />
 
-        {/* ── LEADERSHIP ─────────────────────────────────── */}
-        <div className="mb-16">
-          {/* Section label */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#eb0028]" />
-              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#eb0028] font-bold">
-                Organisers
-              </span>
-            </div>
-            <span className="text-[10px] font-mono text-neutral-600 uppercase tracking-widest">
-              {ORGANIZERS_DATA.leadership.length} Members
+        {/* Status / Count Bar */}
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#eb0028] animate-pulse" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#eb0028] font-bold">
+              Organising Team
             </span>
           </div>
+          <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+            {totalMembers} Members
+          </span>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {ORGANIZERS_DATA.leadership.map((member) => {
-              const initials = getInitials(member.name);
-              return (
-                <div
-                  key={member.id}
-                  className="relative overflow-hidden rounded-2xl bg-[#111114] border border-neutral-800 hover:border-neutral-700 transition-all duration-300 group"
-                  style={{ minHeight: '160px' }}
-                >
-                  {/* Background initials watermark */}
-                  <div
-                    className="absolute -right-4 -bottom-6 text-[7rem] font-black text-white/[0.03] leading-none select-none pointer-events-none"
-                    aria-hidden="true"
-                  >
-                    {initials}
-                  </div>
-
-                  {/* Red top accent */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#eb0028]" />
-
-                  <div className="relative p-6 flex flex-col justify-between h-full">
-                    {/* Role */}
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="w-5 h-[1px] bg-[#eb0028]" />
-                      <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#eb0028] font-bold">
-                        {member.role}
-                      </span>
-                    </div>
-
-                    {/* Name */}
-                    <div className="flex-1">
-                      <h4 className="text-xl font-black text-white leading-tight tracking-tight">
-                        {member.name}
-                      </h4>
-                    </div>
-
-                    {/* Bottom row */}
-                    <div className="flex items-end justify-between mt-6">
-                      <span className="text-[10px] font-mono text-neutral-600 uppercase tracking-wider">
-                        {member.category}
-                      </span>
-                      <div className="w-8 h-8 rounded-lg bg-[#eb0028]/10 border border-[#eb0028]/20 flex items-center justify-center">
-                        <span className="text-[9px] font-black font-mono text-[#eb0028]">{initials}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+        {/* ── TOP 3 ORGANIZERS (Centered on top) ── */}
+        <div className="mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 max-w-4xl mx-auto">
+            {leadershipMembers.map((member, idx) => (
+              <OrganizerCard key={member.id} member={member} idx={idx} />
+            ))}
           </div>
         </div>
 
-        {/* ── EXECUTIVE BOARD ──────────────────────────────── */}
-        <div>
-          {/* Section label */}
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-neutral-600" />
-              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-neutral-400 font-bold">
-                Executive Board
-              </span>
-            </div>
-            <span className="text-[10px] font-mono text-neutral-600 uppercase tracking-widest">
-              {totalEB} Members
-            </span>
-          </div>
-
-          {/* One block per department */}
-          <div className="space-y-8">
-            {ORGANIZERS_DATA.executiveBoard.map((dept, deptIdx) => (
-              <div key={dept.department}>
-                {/* Department header */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <span className="text-[9px] font-mono text-neutral-600">
-                      {String(deptIdx + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-neutral-400 font-bold px-2.5 py-0.5 rounded bg-neutral-900 border border-neutral-800">
-                      {dept.badge}
-                    </span>
-                    <span className="text-xs text-neutral-500 uppercase tracking-wide">
-                      {dept.department}
-                    </span>
-                  </div>
-                  <span className="text-[9px] font-mono text-neutral-700 uppercase tracking-widest">
-                    {dept.heads.length} {dept.heads.length === 1 ? 'Member' : 'Members'}
-                  </span>
-                </div>
-
-                {/* Person cards */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-                  {dept.heads.map((name) => {
-                    const initials = getInitials(name);
-                    return (
-                      <div
-                        key={name}
-                        className="relative overflow-hidden rounded-xl bg-[#111114] border border-neutral-800/80 hover:border-neutral-700 hover:bg-[#161619] transition-all duration-200 group"
-                        style={{ minHeight: '130px' }}
-                      >
-                        {/* Background initials watermark */}
-                        <div
-                          className="absolute -right-2 -bottom-4 text-[4.5rem] font-black text-white/[0.04] leading-none select-none pointer-events-none"
-                          aria-hidden="true"
-                        >
-                          {initials}
-                        </div>
-
-                        <div className="relative p-4 flex flex-col justify-between h-full">
-                          {/* Role label */}
-                          <div className="flex items-center gap-1.5 mb-3">
-                            <span className="w-4 h-[1px] bg-neutral-700 group-hover:bg-[#eb0028]/60 transition-colors" />
-                            <span className="text-[9px] font-mono uppercase tracking-[0.15em] text-neutral-600 group-hover:text-neutral-500 transition-colors truncate">
-                              {dept.badge}
-                            </span>
-                          </div>
-
-                          {/* Name */}
-                          <p className="text-sm font-bold text-white leading-snug tracking-tight flex-1">
-                            {name}
-                          </p>
-
-                          {/* Initials badge */}
-                          <div className="flex justify-end mt-4">
-                            <span className="text-[9px] font-black font-mono text-neutral-700 group-hover:text-neutral-500 transition-colors">
-                              {initials}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* ── OTHER ORGANIZERS / EXECUTIVE BOARD (Continuous adjacent grid below) ── */}
+        <div className="grid grid-cols-1 min-[480px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3.5 sm:gap-4 justify-items-stretch">
+          {ebMembers.map((member, idx) => (
+            <OrganizerCard
+              key={member.id}
+              member={member}
+              idx={leadershipMembers.length + idx}
+            />
+          ))}
         </div>
       </div>
     </section>

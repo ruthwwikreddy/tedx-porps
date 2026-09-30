@@ -11,9 +11,7 @@ import { Experience } from '@/components/Experience';
 import { Venue } from '@/components/Venue';
 import { Organizers } from '@/components/Organizers';
 import { Partners } from '@/components/Partners';
-import { FAQ } from '@/components/FAQ';
 import { Gallery } from '@/components/Gallery';
-import { Updates } from '@/components/Updates';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 
@@ -59,11 +57,7 @@ export default function Home() {
       {/* Moments & Memories Visual Gallery */}
       <Gallery />
 
-      {/* Dispatches & News from the Event */}
-      <Updates />
 
-      {/* Frequently Asked Questions */}
-      <FAQ />
 
       {/* Direct Contact & Collaboration Form */}
       <Contact />

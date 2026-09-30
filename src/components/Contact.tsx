@@ -23,7 +23,7 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-24 bg-[#0a0a0c] border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          number="13"
+          number="11"
           badge="Direct Inquiries"
           title="Let's Connect"
           subtitle="Reach out to the TEDx PORPS YOUTH curatorial and operations committee."

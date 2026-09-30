@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Speaker } from '@/data/event';
 
 interface SpeakerModalProps {
@@ -9,6 +9,12 @@ interface SpeakerModalProps {
 }
 
 export const SpeakerModal: React.FC<SpeakerModalProps> = ({ speaker, onClose }) => {
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [speaker]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -54,28 +60,33 @@ export const SpeakerModal: React.FC<SpeakerModalProps> = ({ speaker, onClose }) 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Left: Speaker Portrait Box */}
           <div className="md:col-span-5">
-            <div className="aspect-[4/5] rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-              <div className="w-24 h-24 rounded-full border-2 border-dashed border-[#eb0028]/40 flex items-center justify-center mb-4">
-                <svg className="w-10 h-10 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
+            <div className="relative aspect-[4/5] rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden shadow-2xl">
+              {speaker.image && !imgError ? (
+                <img
+                  src={speaker.image}
+                  alt={`${speaker.name} speaking`}
+                  onError={() => setImgError(true)}
+                  className="w-full h-full object-cover object-top"
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center">
+                  <div className="w-20 h-20 rounded-full border border-neutral-700 flex items-center justify-center mb-3">
+                    <span className="text-lg font-mono text-neutral-400 font-bold">0{speaker.placeholderIndex}</span>
+                  </div>
+                </div>
+              )}
 
-              <div className="text-xs font-mono uppercase tracking-widest text-[#eb0028] font-bold">
-                SPEAKER 0{speaker.placeholderIndex}
-              </div>
-              <div className="text-base font-bold text-white mt-1">
-                {speaker.name}
-              </div>
-              <div className="text-xs text-[#eb0028] font-mono mt-1 font-semibold">
-                {speaker.profession}
-              </div>
-              <div className="text-[11px] text-neutral-400 font-mono mt-0.5">
-                {speaker.organization}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-neutral-800 w-full text-[10px] font-mono text-neutral-500">
-                Official Headshot To Be Released
+              {/* Bottom gradient overlay with speaker name and category */}
+              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent">
+                <span className="text-[10px] font-mono tracking-widest uppercase text-[#eb0028] font-bold block">
+                  Speaker 0{speaker.placeholderIndex}
+                </span>
+                <span className="text-sm font-bold text-white block mt-0.5">
+                  {speaker.name}
+                </span>
+                <span className="text-xs text-neutral-400 font-mono block">
+                  {speaker.profession}
+                </span>
               </div>
             </div>
 
@@ -118,15 +129,13 @@ export const SpeakerModal: React.FC<SpeakerModalProps> = ({ speaker, onClose }) 
               </p>
             </div>
 
-            {/* Social links placeholder */}
+            {/* Social links */}
             <div className="pt-2 border-t border-neutral-800 flex items-center justify-between">
               <span className="text-xs font-mono text-neutral-500">
-                Social Profile Handles
+                Official Speaker Profile
               </span>
               <div className="flex items-center gap-3 text-xs font-mono text-neutral-400">
-                <span>[Twitter]</span>
-                <span>[LinkedIn]</span>
-                <span>[Web]</span>
+                <span className="text-[#eb0028]">TEDxPORPS Youth 2026</span>
               </div>
             </div>
           </div>

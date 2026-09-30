@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Speaker } from '@/data/event';
 
 interface SpeakerCardProps {
@@ -7,6 +9,8 @@ interface SpeakerCardProps {
 }
 
 export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, onSelect }) => {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div
       onClick={() => onSelect(speaker)}
@@ -31,18 +35,25 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, onSelect }) =
           </span>
         </div>
 
-        {/* Elegant Speaker Image Placeholder Box */}
-        <div className="aspect-[4/3] w-full rounded-xl bg-gradient-to-b from-neutral-800 via-neutral-900 to-neutral-950 border border-neutral-700/60 mb-4 relative overflow-hidden flex flex-col items-center justify-center p-4 text-center group-hover:border-[#eb0028]/40 transition-colors">
-          {/* Subtle user avatar outline */}
-          <div className="w-14 h-14 rounded-full border border-dashed border-neutral-600 flex items-center justify-center mb-2 group-hover:border-[#eb0028] transition-colors">
-            <svg className="w-6 h-6 text-neutral-500 group-hover:text-[#eb0028] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </div>
-
-          <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
-            Portrait Placeholder
-          </span>
+        {/* Speaker Image Box */}
+        <div className="aspect-[4/3] w-full rounded-xl bg-neutral-950 border border-neutral-800 mb-4 relative overflow-hidden group-hover:border-[#eb0028]/50 transition-colors">
+          {speaker.image && !imgError ? (
+            <img
+              src={speaker.image}
+              alt={`${speaker.name} speaking`}
+              onError={() => setImgError(true)}
+              className="w-full h-full object-cover object-top filter grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center">
+              <div className="w-12 h-12 rounded-full border border-dashed border-neutral-700 flex items-center justify-center mb-2">
+                <span className="text-xs font-mono text-neutral-400 font-bold">0{speaker.placeholderIndex}</span>
+              </div>
+              <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400">
+                {speaker.name}
+              </span>
+            </div>
+          )}
 
           {/* Hover Accent Line */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#eb0028] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
@@ -75,4 +86,3 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, onSelect }) =
     </div>
   );
 };
-

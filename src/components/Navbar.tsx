@@ -29,8 +29,8 @@ export const Navbar: React.FC = () => {
     { label: 'Home',       href: '#home' },
     { label: 'Speakers',   href: '#speakers' },
     { label: 'Schedule',   href: '#schedule' },
+    { label: 'Organizers', href: '#organizers' },
     { label: 'Partners',   href: '#partners' },
-    { label: 'FAQ',        href: '#faq' },
     { label: 'Contact',    href: '#contact' },
   ];
 
@@ -43,9 +43,10 @@ export const Navbar: React.FC = () => {
     { label: 'Experience', href: '#experience' },
     { label: 'Organizers', href: '#organizers' },
     { label: 'Partners',   href: '#partners' },
-    { label: 'FAQ',        href: '#faq' },
+    { label: 'Gallery',    href: '#gallery' },
     { label: 'Contact',    href: '#contact' },
   ];
+
 
   return (
     <>

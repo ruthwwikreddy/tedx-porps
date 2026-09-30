@@ -84,7 +84,7 @@ export const Gallery: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <SectionHeading
-          number="11"
+          number="10"
           badge="Visual Archive"
           title="Moments & Memories"
           subtitle="Photographs from a previous TEDxPORPS event — the energy, the stage, the people."
