@@ -5,18 +5,18 @@ import Image from 'next/image';
 import { SectionHeading } from './SectionHeading';
 
 const PHOTOS = [
-  { id: 'p1',  src: '/images/tedx-previous/0N7A8948.JPG', alt: 'TEDx PORPS — Stage Moment' },
-  { id: 'p2',  src: '/images/tedx-previous/0N7A8950.JPG', alt: 'TEDx PORPS — Audience Energy' },
-  { id: 'p3',  src: '/images/tedx-previous/0N7A9080.JPG', alt: 'TEDx PORPS — Speaker on Stage' },
-  { id: 'p4',  src: '/images/tedx-previous/0N7A9086.JPG', alt: 'TEDx PORPS — Red Circle Moment' },
-  { id: 'p5',  src: '/images/tedx-previous/0N7A9278.JPG', alt: 'TEDx PORPS — Conversation' },
-  { id: 'p6',  src: '/images/tedx-previous/0N7A9279.JPG', alt: 'TEDx PORPS — Behind The Scenes' },
-  { id: 'p7',  src: '/images/tedx-previous/0N7A9341.JPG', alt: 'TEDx PORPS — Stage Lighting' },
-  { id: 'p8',  src: '/images/tedx-previous/0N7A9347.JPG', alt: 'TEDx PORPS — Audience Reflection' },
-  { id: 'p9',  src: '/images/tedx-previous/0N7A9457.JPG', alt: 'TEDx PORPS — Panel Discussion' },
-  { id: 'p10', src: '/images/tedx-previous/0N7A9459.JPG', alt: 'TEDx PORPS — Standing Ovation' },
-  { id: 'p11', src: '/images/tedx-previous/0N7A9506.JPG', alt: 'TEDx PORPS — Closing Ceremony' },
-  { id: 'p12', src: '/images/tedx-previous/0N7A9518.JPG', alt: 'TEDx PORPS — Organizers Gather' },
+  { id: 'p1',  src: '/images/tedx-previous/0N7A8948.JPG', alt: 'Speaker delivering their talk on the TEDx PORPS main stage' },
+  { id: 'p2',  src: '/images/tedx-previous/0N7A8950.JPG', alt: 'Speaker passionately addressing the audience at TEDx PORPS' },
+  { id: 'p3',  src: '/images/tedx-previous/0N7A9080.JPG', alt: 'Speaker sharing ideas from the TEDx red circle' },
+  { id: 'p4',  src: '/images/tedx-previous/0N7A9086.JPG', alt: 'Speaker in full flow during their TEDx talk' },
+  { id: 'p5',  src: '/images/tedx-previous/0N7A9278.JPG', alt: 'Speaker connecting with the audience at TEDx PORPS' },
+  { id: 'p6',  src: '/images/tedx-previous/0N7A9279.JPG', alt: 'Speaker mid-talk on the TEDx PORPS stage' },
+  { id: 'p7',  src: '/images/tedx-previous/0N7A9341.JPG', alt: 'Speaker commanding the stage under TEDx spotlights' },
+  { id: 'p8',  src: '/images/tedx-previous/0N7A9347.JPG', alt: 'Speaker gesturing during an impactful moment on stage' },
+  { id: 'p9',  src: '/images/tedx-previous/0N7A9457.JPG', alt: 'Speaker presenting ideas at TEDx PORPS Youth' },
+  { id: 'p10', src: '/images/tedx-previous/0N7A9459.JPG', alt: 'Speaker concluding their talk to a captivated audience' },
+  { id: 'p11', src: '/images/tedx-previous/0N7A9506.JPG', alt: 'Speaker on stage during the TEDx PORPS session' },
+  { id: 'p12', src: '/images/tedx-previous/0N7A9518.JPG', alt: 'Speaker delivering the final words of their TEDx talk' },
 ];
 
 type Photo = typeof PHOTOS[number];
