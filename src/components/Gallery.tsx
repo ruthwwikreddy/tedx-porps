@@ -70,8 +70,8 @@ export const Gallery: React.FC = () => {
       {/* Dark hover overlay */}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
       {/* Expand icon */}
-      <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-        ↗
+      <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
       </div>
       {/* Red bottom bar */}
       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#eb0028] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -132,7 +132,7 @@ export const Gallery: React.FC = () => {
               className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none z-10"
               aria-label="Close lightbox"
             >
-              ✕
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
 
             {/* Image */}
@@ -155,7 +155,7 @@ export const Gallery: React.FC = () => {
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
                 aria-label="Previous photo"
               >
-                ←
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/></svg>
               </button>
               <div className="text-center">
                 <p className="text-sm text-neutral-300">{activePhoto.alt}</p>
@@ -169,7 +169,7 @@ export const Gallery: React.FC = () => {
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
                 aria-label="Next photo"
               >
-                →
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
               </button>
             </div>
           </div>

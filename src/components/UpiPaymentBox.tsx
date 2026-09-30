@@ -129,7 +129,12 @@ export default function UpiPaymentBox({
               onClick={copyUpiId}
               className="ml-2 px-2.5 py-1 rounded-lg bg-[#eb0028]/20 hover:bg-[#eb0028] text-[#eb0028] hover:text-white text-[11px] font-bold transition-all flex-shrink-0"
             >
-              {copied ? 'Copied! ✓' : 'Copy'}
+              {copied ? (
+                <span className="flex items-center gap-1">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"/></svg>
+                  Copied!
+                </span>
+              ) : 'Copy'}
             </button>
           </div>
 
@@ -139,7 +144,8 @@ export default function UpiPaymentBox({
               href={upiLink}
               className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all"
             >
-              <span>⚡ Open Directly in UPI App</span>
+              <svg className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Open Directly in UPI App</span>
             </a>
           </div>
         </div>
@@ -191,7 +197,8 @@ export default function UpiPaymentBox({
                       className="max-h-48 rounded-xl object-contain border border-white/10 mb-3 shadow-lg"
                     />
                     <div className="text-xs font-mono text-emerald-400 font-bold flex items-center gap-1 mb-1">
-                      <span>✓</span> Screenshot Selected ({screenshotFile?.name})
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"/></svg>
+                      Screenshot Selected ({screenshotFile?.name})
                     </div>
                     <span className="text-[11px] text-neutral-400 underline">
                       Click to choose a different image

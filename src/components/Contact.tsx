@@ -90,8 +90,8 @@ export const Contact: React.FC = () => {
             <div className="p-8 sm:p-10 rounded-3xl bg-neutral-900/40 border border-white/10 shadow-2xl backdrop-blur-md">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-[#eb0028]/20 text-[#eb0028] flex items-center justify-center mx-auto text-2xl">
-                    ✓
+                  <div className="w-16 h-16 rounded-full bg-[#eb0028]/20 text-[#eb0028] flex items-center justify-center mx-auto">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <h4 className="text-2xl font-bold uppercase tracking-tight text-white">
                     Message Received

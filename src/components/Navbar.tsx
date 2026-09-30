@@ -27,6 +27,15 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: 'Home',       href: '#home' },
+    { label: 'Speakers',   href: '#speakers' },
+    { label: 'Schedule',   href: '#schedule' },
+    { label: 'Partners',   href: '#partners' },
+    { label: 'FAQ',        href: '#faq' },
+    { label: 'Contact',    href: '#contact' },
+  ];
+
+  const allLinks = [
+    { label: 'Home',       href: '#home' },
     { label: 'About',      href: '#about' },
     { label: 'Theme',      href: '#theme' },
     { label: 'Speakers',   href: '#speakers' },
@@ -71,7 +80,7 @@ export const Navbar: React.FC = () => {
 
             {/* Desktop Nav Links */}
             <nav className="hidden lg:flex items-center gap-0.5 mx-4">
-              {navLinks.slice(0, 9).map((link) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -143,7 +152,7 @@ export const Navbar: React.FC = () => {
 
           {/* Links grid */}
           <div className="py-8 max-w-4xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {navLinks.map((link, idx) => (
+            {allLinks.map((link, idx) => (
               <Link
                 key={link.label}
                 href={link.href}

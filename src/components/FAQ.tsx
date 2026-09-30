@@ -50,7 +50,12 @@ export const FAQ: React.FC = () => {
                       isOpen ? 'rotate-180 bg-[#eb0028] text-white' : ''
                     }`}
                   >
-                    ↓
+                  <svg
+                      className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180 text-white' : 'text-neutral-300'}`}
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
                   </span>
                 </button>
 
@@ -59,7 +64,7 @@ export const FAQ: React.FC = () => {
                     <p>{faq.answer}</p>
                     <div className="mt-4 flex items-center gap-2 text-[10px] font-mono text-neutral-500 uppercase">
                       <span>Category: {faq.category}</span>
-                      <span>•</span>
+                      <span className="w-1 h-1 rounded-full bg-neutral-700 inline-block" />
                       <span>Official Event Policy</span>
                     </div>
                   </div>
