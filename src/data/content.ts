@@ -35,7 +35,7 @@ export const ORGANIZERS_DATA = {
     {
       department: "Design & Documentation Head",
       heads: ["Akkenapally Ruthwik Reddy", "G. Sanvi Sree"],
-      badge: "Creative & Web"
+      badge: "Creative"
     },
     {
       department: "Logistics & Hospitality Head",
